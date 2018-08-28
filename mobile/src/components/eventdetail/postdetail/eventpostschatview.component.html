@@ -1,0 +1,28 @@
+<div class="segmentTabs">
+  <ion-segment [(ngModel)]="segment" (click)="updatePost()">
+    <ion-segment-button value="excludeupdate">评论</ion-segment-button>
+    <ion-segment-button value="update">历史记录</ion-segment-button>
+  </ion-segment>
+  <div class="segmentTabs-Contents">
+    <div *ngFor="let item of PostItems" class="message-wrapper">
+      <button class="round-button profile-btn " [ngClass]="{'left': item.PersonIndex % 2 == 0, 'right': item.PersonIndex % 2 > 0}"
+        *ngIf="!item.PersonPicurl">{{item.personName}}</button>
+      <img class="profile-pic " [ngClass]="{'left': item.PersonIndex % 2 == 0, 'right': item.PersonIndex % 2 > 0}" [src]="item.PersonPicurl|baseUrl"
+        *ngIf="item.PersonPicurl" alt="图">
+      <div class="chat-bubble " [ngClass]="{'left': item.PersonIndex % 2 == 0, 'right': item.PersonIndex % 2 > 0}">
+        <div class="message-detail">
+          <div class="message" [innerHTML]="item.ShowText"></div>
+          <imgcard [imageclass]="'postimageclass'" [sourcesrc]="item.ImgAnchor" [thumbsrc]="item.ImgSrc" [title]="" [subtitle]="" *ngIf="item.Imgtype==='image'"></imgcard>
+          <singlevideoplayer [src]="item.ImgSrc" [type]="item.ContentType" *ngIf="item.Imgtype==='video'"></singlevideoplayer>
+          <singleaudioplayer [src]="item.ImgSrc" [type]="item.ContentType" *ngIf="item.Imgtype==='audio'"></singleaudioplayer>
+          <span *ngIf="item.Imgtype==='file'">附件：{{item.ImgAnchor}}</span>
+        </div>
+        <div class="message-user">
+          <span>{{item.DateTimeStr}}</span>
+          <span class="bold">{{item.personName}}</span>
+        </div>
+      </div>
+      <div class="cf"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+eventpostsformview {
+    .round-button{
+        color: white;
+        font-weight: normal;
+    }
+    .item p {
+        margin: 16px 0px 12px 0px;
+    }
+    .note {
+        color: color($colors,blackdark);
+        font-size: 1.2rem;
+    }
+}

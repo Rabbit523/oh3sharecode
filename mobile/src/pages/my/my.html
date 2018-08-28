@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title>我</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-card mycard>
+    <button ion-item (click)="openAccount()">
+      <ion-avatar item-left>
+        <img [src]="Usersrc">
+      </ion-avatar>
+      <h2>{{username}}</h2>
+      <p>{{Ogname}}</p>
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+  </ion-card>
+  <ion-item-group>
+    <ion-item-divider color="light" class="divider"></ion-item-divider>
+    <button ion-item (click)="openMyTractor()">
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="rcbg2"></ion-icon>
+        <ion-icon class="fa fa-paw fa-stack-1x fa-inverse"></ion-icon>
+      </span> 我的足迹
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+    <button ion-item (click)="openMyBookmark()" *ngIf="showNote.Note">
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="rcbg2"></ion-icon>
+        <ion-icon class="fa fa-address-card-o fa-stack-1x fa-inverse"></ion-icon>
+      </span> 我的收藏
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" class="divider"></ion-item-divider>
+    <button ion-item (click)="openSetupPage()">
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="primary"></ion-icon>
+        <ion-icon class="fa fa-cog fa-stack-1x fa-inverse"></ion-icon>
+      </span> 参数配置
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+    <button ion-item (click)="FunctionPage()">
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="primary"></ion-icon>
+        <ion-icon class="fa fa-sliders fa-stack-1x fa-inverse"></ion-icon>
+      </span> 功能配置
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+  </ion-item-group>
+  
+  <ion-item-group>
+    <ion-item-divider color="light" class="divider"></ion-item-divider>
+    <button ion-item (click)="openAbout()">
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="rcbg3"></ion-icon>
+        <ion-icon class="fa fa-info-circle fa-stack-1x fa-inverse"></ion-icon>
+      </span> 版本信息
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+    <button ion-item (click)="openScaner()">
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="rcbg3"></ion-icon>
+        <ion-icon class="fa fa-qrcode fa-stack-1x fa-inverse"></ion-icon>
+      </span> 扫一扫
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>    
+    <button ion-item (click)="openTestPage()" hidden>
+      <span class="fa-stack" margin-right>
+        <ion-icon class="fa fa-square fa-stack-2x" color="rcbg3"></ion-icon>
+        <ion-icon class="fa fa-heartbeat fa-stack-1x fa-inverse"></ion-icon>
+      </span> 测试页面
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,29 @@
+receivedlist{
+    .content-custom{
+        border-bottom:#dedede 1px solid;        
+    }
+    .content-custom p{
+        font-size:1.5rem;  
+        color:color($colors,dark);
+    }
+    #commentCard ion-card-content {
+        background-color: white;
+    }
+    #commentCard ion-card-content p {
+        color: color($colors,dark);
+        padding-top:0px;    
+    }
+    #commentCard ion-item p {
+        color:color($colors,label);
+        font-weight:normal;
+    }
+    #commentCard {
+        margin-top:0px;
+    }     
+    .round-button{
+        color: white;
+        font-weight: normal;
+        padding:0px;  
+        position: relative;
+    } 
+}

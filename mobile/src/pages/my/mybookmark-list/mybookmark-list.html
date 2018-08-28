@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title mr50>我的书签</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-item itembm *ngFor="let item of state.BookMark.Items" (click)="goToEventDetail(item.bu_bug)" class="item-custom">
+      <ion-avatar item-end>
+          <ion-badge item-right>{{item.bu_bug}}</ion-badge>
+      </ion-avatar>
+      <h2 text-nowrap>{{item.bg_short_desc}}</h2>
+      <p>{{item.NoteDateDayStr}}</p>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <pagination [pager]="state.pager"  (search)="doSearch($event)"> </pagination>
+</ion-footer>

@@ -1,0 +1,8 @@
+<ion-row class="tags" padding-left>
+    <ion-col>
+        <button color="light" ion-button small class="tag" (click)="modTags()">
+            <ion-icon name="md-create" color="primary"></ion-icon>
+        </button>
+        <button ion-button color="primary" round outline small class="tag tagitem" *ngFor="let tag of allTags">{{tag}}</button>
+    </ion-col>
+</ion-row>

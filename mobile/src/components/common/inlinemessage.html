@@ -1,0 +1,8 @@
+<ion-toolbar *ngIf="InLineMsg.show">
+    <ion-buttons right>
+        <button ion-button icon-only color="secondary" (click)="HiddenCard()">
+            <ion-icon item-end name="ios-close" color="dark"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title id="globalerrormsg">{{InLineMsg.msg}}</ion-title>
+</ion-toolbar>

@@ -1,0 +1,48 @@
+<!-- <ion-grid text-center no-padding>
+  <ion-row>
+    <ion-col col-2>
+      <button ion-button no-margin color="light" full [disabled]="pager.pageIndex==1 " (click)="btnClick(1)">
+        <ion-icon class="fa fa-angle-double-left fa-2x" aria-hidden="true" color="blackdark"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button no-margin color="light" full [disabled]="pager.pageIndex==1 " (click)="btnClick(pager.pageIndex-1)">
+        <ion-icon class="fa fa-angle-left fa-2x" aria-hidden="true" color="blackdark"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-4 no-padding>
+      <button ion-button no-margin color="textbgc" full>
+        {{pager.pageIndex}}/{{pager.pageCount}}
+      </button>
+    </ion-col>
+    <ion-col col-2 no-padding>
+      <button ion-button no-margin color="light" full [disabled]="pager.pageIndex==pager.pageCount " (click)="btnClick(pager.pageIndex+1)">
+        <ion-icon class="fa fa-angle-right fa-2x" aria-hidden="true" color="blackdark"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-2 no-padding>
+      <button ion-button no-margin color="light" full [disabled]="pager.pageIndex==pager.pageCount " (click)="btnClick(pager.pageCount)">
+        <ion-icon class="fa fa-angle-double-right  fa-2x" aria-hidden="true" color="blackdark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid> -->
+<ion-toolbar>
+  <ion-buttons class="Group-btn">
+    <button ion-button icon-left [disabled]="pager.pageIndex==1" (click)="btnClick(1)">
+      <ion-icon class="fa fa-angle-double-left fa-2x" aria-hidden="true"></ion-icon>首页
+    </button>
+    <button ion-button icon-left [disabled]="pager.pageIndex==1" (click)="btnClick(pager.pageIndex-1)">
+      <ion-icon class="fa fa-angle-left fa-2x" aria-hidden="true"></ion-icon>前一页
+    </button>
+    <button ion-button>
+      {{pager.pageIndex}}/{{pager.pageCount}}
+    </button>
+    <button ion-button icon-right [disabled]="pager.pageIndex==pager.pageCount" (click)="btnClick(pager.pageIndex+1)">
+      后一页<ion-icon class="fa fa-angle-right fa-2x" aria-hidden="true"></ion-icon>
+    </button>
+    <button ion-button icon-right [disabled]="pager.pageIndex==pager.pageCount" (click)="btnClick(pager.pageCount)">
+      尾页<ion-icon class="fa fa-angle-double-right  fa-2x" aria-hidden="true"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>

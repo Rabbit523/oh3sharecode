@@ -1,0 +1,14 @@
+<ion-item no-lines>
+  <ion-row>
+    <label for="myFileInput">
+    <ion-avatar>
+      <input id="myFileInput" type="file" capture="camera" accept="image/*" (change)="previewFiles()" multiple>
+      <ion-icon name="images" class="icon-Big" color="label"></ion-icon>
+    </ion-avatar>   
+  </label>
+  </ion-row>
+  <ion-row>
+    <div id="preview">      
+    </div>
+  </ion-row>
+</ion-item>

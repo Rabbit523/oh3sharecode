@@ -1,0 +1,95 @@
+<ion-menu id="EventDetailContentMenu" [content]="EventDetailContent">
+  <ion-header>
+    <ion-toolbar color="navbar">
+      <ion-title>高级菜单</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="outer-content">
+    <ion-list *ngIf="state.menuList.length>1" class="list-custom">
+      <ion-list-header>视图菜单</ion-list-header>
+      <ion-item>
+        <ion-row>
+          <ion-col *ngFor="let m of state.menuList" col-4>
+            <button (click)="setdetailview(m.key)" ion-button small outline class="text-button text-larger" [class.btnactive]="m.checked">{{m.value}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="state.pageFooter==0">
+      <ion-list-header>操作菜单</ion-list-header>
+      <ion-item *ngIf="state.detailCanEdit" (click)="EditEvent()">
+        <ion-icon name="create" item-start color="primary"></ion-icon>
+        <ion-label class="label-custom">编辑</ion-label>
+      </ion-item>
+      <ion-item [hidden]="true" (click)="ShowCategoryCheckbox()">
+        <ion-icon name="options" item-start color="primary"></ion-icon>
+        <ion-label class="label-custom">标签</ion-label>
+      </ion-item>
+      <ion-item *ngFor="let btn of state.Commands" (click)="CommandClick(btn.index)">
+        <ion-icon [name]="btn.Icon" item-start color="primary"></ion-icon>
+        <ion-label class="label-custom">{{btn.Name}}</ion-label>
+      </ion-item>
+      <ion-item (click)="DeleteEvent()">
+        <ion-icon name="close-circle" item-start color="primary"></ion-icon>
+        <ion-label class="label-custom">删除</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="state.ItemMain.BugRelations">
+      <eventdetailitemrelationshipview [BugRelations]="state.ItemMain.BugRelations" (GotoDetail)="ChangeBugid($event)"></eventdetailitemrelationshipview>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title>{{state.header}}{{state.HeadTitle}}</ion-title>
+    <ion-buttons end>
+      <button *ngIf="state.ItemMain.ActionType != 5" ion-button icon-only (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <button *ngIf="state.ItemMain.ActionType == 5" ion-button icon-only>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content" #EventDetailContent>
+  <!--header-->
+  <eventdetailcreator [Id]="state.Bgid" [UserId]="state.ItemMain.reportedUsid" [ReportedDate]="state.ItemMain.reportedByDateStr"></eventdetailcreator>
+  <!--mainDisplay-->
+  <ion-card no-margin class="eventdetailcard">
+    <eventdetailitemproblem [MainDisplayDictionary]="state.MainFieldDisplays" [ExtDisplayDictionary]="state.ExtFieldDisplays"
+      *ngIf="state.ItemMain.ActionType==4"></eventdetailitemproblem>
+    <eventdetailitemofficenote [MainDisplayDictionary]="state.MainFieldDisplays" [ExtDisplayDictionary]="state.ExtFieldDisplays"
+      *ngIf="state.ItemMain.ActionType==5"></eventdetailitemofficenote>    
+  </ion-card>
+
+  <!--PostDisplay-->
+  <eventpoststimeview [items]="state.Post" *ngIf="state.detailviewid == 0"></eventpoststimeview>
+  <eventpostschatview [items]="state.Post" *ngIf="state.detailviewid == 1"></eventpostschatview>
+  <eventpostscontentview [items]="state.Post" *ngIf="state.detailviewid == 2"></eventpostscontentview>
+  <eventpoststableview [items]="state.Post" *ngIf="state.detailviewid == 3"></eventpoststableview>
+  <eventpostsformview [items]="state.Post" *ngIf="state.detailviewid == 4"></eventpostsformview>
+  <eventpostsproblemview [items]="state.Post" *ngIf="state.detailviewid == 5"></eventpostsproblemview>
+</ion-content>
+<ion-footer>
+  <ion-toolbar *ngIf="state.ItemMain.ActionType == 5">
+    <p text-center color="danger"> 规章制度 请严格执行 </p>
+  </ion-toolbar>
+  <ion-toolbar no-border-top no-padding minheight50 *ngIf="state.ItemMain.ActionType != 5">
+    <p>
+      <input class="toolbarinput" type="text" placeholder="请输入评论的内容" [(ngModel)]="statec.comment" />
+    </p>
+    <ion-buttons end>
+      <button ion-button icon-right (click)="saveComment()">
+        <ion-icon name="chatboxes"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="Setting.Note && state.BugUsers[0]">
+      <button ion-button icon-right (click)="ShowNoteConfirm()">
+        <ion-icon name="star" *ngIf="state.BugUsers[0].bu_note"></ion-icon>
+        <ion-icon name="star-outline" *ngIf="!state.BugUsers[0].bu_note"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

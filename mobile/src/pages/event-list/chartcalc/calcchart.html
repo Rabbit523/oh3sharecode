@@ -1,0 +1,61 @@
+<ion-menu id="ChartfiltercontentMenu" [content]="ChartfiltercontentMenu">
+    <ion-header>
+        <ion-toolbar color="navbar">
+            <ion-title>重新绘图</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content class="outer-content">
+        <chartfilter (setFilterData)="setFilterData($event)" (Initdata)="state.defaultArray" [CheckBoxDataArray]="state.CheckBoxDataArray"></chartfilter>
+    </ion-content>
+</ion-menu>
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title text-center>
+            图标分析
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openMenu()">
+                <ion-icon name="swap"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content #ChartfiltercontentMenu class="outer-content" id="content-top">
+    <ion-card mycard itembm>
+        <ion-card-header>
+            线性统计对比
+        </ion-card-header>
+        <ion-card-content>
+            <canvas #lineCanvas></canvas>
+        </ion-card-content>
+    </ion-card>
+    <ion-card mycard itembm>
+        <ion-card-header>
+            柱状统计对比
+        </ion-card-header>
+        <ion-card-content>
+            <canvas #barCanvas></canvas>
+        </ion-card-content>
+    </ion-card>
+    <ion-card mycard itembm>
+        <ion-card-header>
+            饼形统计对比
+        </ion-card-header>
+        <ion-card-content>
+            <canvas #pieCanvas></canvas>
+        </ion-card-content>
+    </ion-card>
+    <ion-card mycard itembm>
+        <ion-card-header>
+            雷达分布对比
+        </ion-card-header>
+        <ion-card-content>
+            <canvas #radarCanvas></canvas>
+        </ion-card-content>
+    </ion-card>
+    <ion-fab right bottom>
+        <button ion-fab color="primary" mini (click)="ChangeChartXY()">
+            <ion-icon name='git-compare'></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

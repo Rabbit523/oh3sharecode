@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="navbar">
+      <ion-buttons left>
+        <button ion-button icon-only (click)="doprocessClick(0)" class="backformodal"> 
+            <ion-title><span class="text">取消</span></ion-title>
+          </button>
+      </ion-buttons>
+      <ion-title text-center>{{state.header}}{{state.HeadTitle}}</ion-title>
+      <ion-buttons right>
+        <button ion-button block (click)="doprocessClick(1)">    
+            <ion-title><span class="text">提交</span></ion-title>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content class="outer-content">
+    <ion-list>
+      <eventedititem [itemEdit]="editState"></eventedititem>
+      <cameracomponentonecol *ngIf="!platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentonecol>
+      <cameracomponentweb *ngIf="platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentweb>
+    </ion-list>
+  </ion-content>

@@ -1,0 +1,16 @@
+<ion-list *ngFor="let i =index,let alist of cateList" class="list-custom">
+    <ion-list-header class="header-custom">
+        <ion-icon class="fa fa-caret-right" aria-hidden="true" color="primary"></ion-icon>
+        {{alist.DefineFieldName||'通用分类'}}
+        <button ion-button clear item-right icon-left height30 (click)="EditCategory(i,0,'add')">
+            <ion-icon name="add"></ion-icon>新增</button>
+    </ion-list-header>
+    <ion-item *ngFor="let j =index,let item of alist.DefineFields" (click)="EditCategory(i,j,'edit')">
+        <ion-icon name="ios-folder-outline" *ngIf="item.BindType==0" item-start></ion-icon>
+        <ion-icon name="ios-person-outline" *ngIf="item.BindType==1" item-start></ion-icon>
+        <ion-icon name="ios-people-outline" *ngIf="item.BindType==2" item-start></ion-icon>
+        <h2 class="depth-{{item.Depth}}">{{item.Name}}
+        </h2>
+        <ion-note item-right>{{item.SortOrder}}</ion-note>
+    </ion-item>
+</ion-list>

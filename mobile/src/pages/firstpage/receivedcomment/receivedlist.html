@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismiss()" class="backformodal"> <ion-icon name="arrow-back"></ion-icon></button>
+    </ion-buttons>
+    <ion-title mr50>收到的评论</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-card mycard itembm id="commentCard" *ngFor="let comment of state.comments" (click)="OpenDetailPage(comment.bp_bug)">
+    <ion-item flex-start>
+      <ion-avatar item-start>
+        <button [class.small]="1" class="round-button" *ngIf="!comment.PersonPicurl">{{comment.PersonLastName|lastChar:4}}</button>
+        <img [class.small]="1" [src]="comment.PersonPicurl|baseUrl" *ngIf="comment.PersonPicurl" alt="图">
+      </ion-avatar>
+      <h2 color="label">{{comment.PersonLastName}}</h2>      
+      <p>{{comment.bp_date}}</p>
+    </ion-item>
+    <ion-card-content class="content-custom">
+      <p padding-top>{{comment.bg_short_desc}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">66</ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

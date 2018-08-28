@@ -1,0 +1,20 @@
+navlistselector {
+    .round-button{
+        color: white;
+        font-weight: normal;
+        display: inline-block;
+        padding:0px;
+      } 
+      .InputCheckBox{                      
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        border: 2px solid #787878;        
+        margin-right: 14px;
+      }      
+      .InputCheckText{
+          width: 100%;
+          display: inline-block;
+          font-size: 16px;
+      }
+}

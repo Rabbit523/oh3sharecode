@@ -1,0 +1,5 @@
+<ion-item>
+  <ion-label color="dark" stacked>新增图片列表:</ion-label>
+  <ion-icon name="image" item-right icon-left (click)="PopAlertClick()" color="label"></ion-icon>
+</ion-item>
+<img *ngFor="let pic of profilePicture" [src]="pic" (click)="showpicture(pic)" />

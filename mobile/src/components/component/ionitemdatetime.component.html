@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-label inset color="dark">{{LabelName}}：</ion-label>
+  <ion-datetime (ionChange)="DateChange()" doneText="选择" cancelText="放弃" [displayFormat]="DateFormat" [pickerFormat]="DateFormat"
+    min="2015" max="2020" [(ngModel)]="defaultPlanDate" style="display: block;width: 0px;padding: 0px;"></ion-datetime>
+  <ion-note item-right color="label">
+    {{SelectedPlanDate||'--请选择--'}}<ion-icon item-right name ="md-arrow-dropdown"></ion-icon>
+  </ion-note>
+</ion-item>

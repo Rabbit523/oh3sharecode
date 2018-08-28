@@ -1,0 +1,32 @@
+firstpage {
+    #multiheader .toolbar-background,#multiheader .toolbar .toolbar-background {
+        background: none;
+    }    
+    .label {        
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .segment .segment-button {
+        font-size: 1.5rem;        
+        height: 3.2rem;
+        line-height: 3rem;
+    }     
+    .divider-custom {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        max-height: 10px;
+    }
+    #roundicon {
+        box-shadow: 1px 2px 3px #999;
+        width: 40px;
+        height: 40px;
+    }
+    #icon-Big {
+        font-size: 30px;
+    }
+    .col-p-custom {
+        margin-top: 8px;
+        margin-bottom: 0px;        
+
+    }
+}

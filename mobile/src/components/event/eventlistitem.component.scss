@@ -1,0 +1,26 @@
+eventlistitem {    
+    .badge-custom{
+        position: relative;
+        left: -5px;
+        top: -10px;
+    }
+    .round-button{
+        color: white;
+        font-weight: normal;
+        font-size: 14px;
+    }
+    .h2-custom {
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }      
+    .row-custom {
+        padding: 5px 16px;
+    }     
+    .col{
+        padding: 0px;
+    }    
+    .note,#anote {
+        color: color($colors,label);
+        font-size: 1.2rem;
+    }  
+}

@@ -1,0 +1,10 @@
+<ion-toolbar *ngIf="items[0]">
+    <ion-row>
+        <ion-col *ngFor="let item of items[0].items" text-center (click)="itemOpenModel(item.EnumId)">
+            <ion-avatar item-left id=roundicon round>
+                <ion-icon id="icon-Big" [name]="item.IconName" [color]="item.P_color"></ion-icon>
+            </ion-avatar>
+            <p class="col-p-custom">{{item.H_title}}</p>
+        </ion-col>
+    </ion-row>
+</ion-toolbar>

@@ -1,0 +1,113 @@
+{
+  "name": "ionic-conference-app",
+  "description": "Ionic Conference App",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "ionic-app-scripts build",
+    "clean": "ionic-app-scripts clean",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "4.4.3",
+    "@angular/compiler": "4.4.3",
+    "@angular/compiler-cli": "4.4.3",
+    "@angular/core": "4.4.3",
+    "@angular/forms": "4.4.3",
+    "@angular/http": "4.4.3",
+    "@angular/platform-browser": "4.4.3",
+    "@angular/platform-browser-dynamic": "4.4.3",
+    "@ionic-native/camera": "^4.4.2",
+    "@ionic-native/core": "^4.4.2",
+    "@ionic-native/crop": "^4.4.2",
+    "@ionic-native/device": "^4.4.2",
+    "@ionic-native/file": "^4.4.2",
+    "@ionic-native/file-transfer": "^4.4.2",
+    "@ionic-native/geolocation": "^4.4.2",
+    "@ionic-native/http": "^4.4.2",
+    "@ionic-native/media": "^4.4.2",
+    "@ionic-native/network": "^4.4.2",
+    "@ionic-native/photo-viewer": "^4.4.2",
+    "@ionic-native/splash-screen": "^4.4.2",
+    "@ionic-native/status-bar": "^4.4.2",
+    "@ionic-native/keyboard": "^4.4.2",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/effects": "^2.0.5",
+    "@ngrx/store": "^2.2.2",
+    "@ngx-translate/core": "^8.0.0",
+    "@ngx-translate/http-loader": "0.1.0",
+    "@types/core-js": "^0.9.37",
+    "angular-2-local-storage": "^1.0.1",
+    "angular2-ladda": "^1.2.3",
+    "signalr-no-jquery": "0.1.8",
+    "chart.js": "^2.6.0",
+    "com-sarriaroman-photoviewer": "^1.1.11",
+    "cordova-android": "~6.3.0",
+    "cordova-hot-code-push-plugin": "^1.5.3",
+    "cordova-ios": "4.5.3",
+    "cordova-plugin-advanced-http": "^1.8.1",
+    "cordova-plugin-camera": "^3.0.0",
+    "cordova-plugin-crop": "^0.4.0",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-file": "^5.0.0",
+    "cordova-plugin-file-transfer": "^1.7.0",
+    "cordova-plugin-geolocation": "^3.0.0",
+    "cordova-plugin-media": "^4.0.0",
+    "cordova-plugin-network-information": "^1.3.4",
+    "cordova-plugin-splashscreen": "^4.1.0",
+    "cordova-plugin-statusbar": "^2.3.0",
+    "ionic-angular": "3.9.2",
+    "ionic2-rating": "^1.2.2",
+    "ionicons": "3.0.0",
+    "moment": "^2.17.1",
+    "ngrx-store-freeze": "0.1.9",
+    "ngrx-store-logger": "0.1.7",
+    "node-sass": "^4.5.0",
+    "rxjs": "5.4.3",
+    "sw-toolbox": "3.6.0",
+    "videogular2": "^4.2.0",
+    "zone.js": "0.8.18",
+    "cordova-plugin-console": "^1.1.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^2.1.2",
+    "ionic-plugin-keyboard": "^2.2.1"
+  },
+  "config": {
+    "ionic_source_map": "source-map",
+    "ionic_copy": "./unusedfont.config.js"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.0.0",
+    "typescript": "2.3.4"
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "com-sarriaroman-photoviewer": {},
+      "cordova-hot-code-push-plugin": {},
+      "cordova-plugin-crop": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "您是否同意该应用使用您的手机拍照.",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "您是否同意该应用访问您的相册来选取一个照片."
+      },
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "请求获取位置"
+      },
+      "cordova-plugin-advanced-http": {},
+      "cordova-plugin-media": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-sqlite-storage": {},
+      "ionic-plugin-keyboard": {}
+    }
+  }
+}

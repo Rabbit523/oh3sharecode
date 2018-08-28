@@ -1,0 +1,28 @@
+<ion-toolbar  no-padding>
+  <ion-segment >
+    <ion-segment-button (click)="takePhoto()" class='mediatoolbox-toolbar'>
+      <ion-icon  name="camera" color='blackdark' ></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button (click)="recordAudio()"  class='mediatoolbox-toolbar'>
+      <ion-icon name="mic" color='blackdark'  *ngIf="audioRecorder.state != 1"></ion-icon>
+      <ion-icon name="mic" color="danger"  *ngIf="audioRecorder.state == 1"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button (click)="GetPosition()"  class='mediatoolbox-toolbar'>
+        <ion-icon name="pin" color='blackdark' ></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button (click)="choosePhoto()"  class='mediatoolbox-toolbar'>
+      <ion-icon name="image" color='blackdark' ></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button (click)="chooseVideo()"  class='mediatoolbox-toolbar'>
+      <ion-icon name="videocam" color='blackdark' ></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+<ion-item class="imgSelected" *ngIf="audioRecorder.state == 1">
+  <img src="assets/img/recording.gif" style="align-items: center;height:100px;" />
+</ion-item>
+<ion-item class="imgSelected" *ngIf="GeoLocating">
+    <ion-icon name="pin" item-left color='label'></ion-icon>
+    <h2>{{position}}</h2>
+    <p>纬度(lat):{{coords.latitude}},经度(log):{{coords.longitude}}</p>
+</ion-item>

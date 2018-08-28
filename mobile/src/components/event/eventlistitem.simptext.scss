@@ -1,0 +1,33 @@
+eventlistitemsimptext {    
+    .badge-custom{position: relative;
+        left: -5px;
+        top: -10px;
+    }
+    .p-custom {
+        font-size: 1.2rem;
+        font-weight: normal;        
+        color: color($colors,label);
+        margin-top: 3px;
+        line-height: 16px; 
+        max-height: 48px;
+        text-overflow:ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    } 
+    .h2-custom {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        max-height: 60px;
+        line-height: 20px;
+        overflow:hidden; 
+        text-overflow:ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        margin-bottom: 10px;
+    }
+    .note {
+        color: color($colors,blackdark);
+        font-size: 1.2rem;
+    }
+}

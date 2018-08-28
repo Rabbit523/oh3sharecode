@@ -1,0 +1,8 @@
+<ion-item-group *ngFor="let org of state.contactorsfiltered">
+  <ion-item-divider text *ngIf="org.orgList.length" color="light">{{org.orgKeyName}}部 : 共{{org.orgList.length}}人 </ion-item-divider>
+  <button ion-item *ngFor="let speaker of org.orgList" (click)="speakerItemTapped(speaker)">
+    <personpicorname item-left [PersonName]="speaker.us_firstname" [PersonPicurl]="speaker.UserPic"> </personpicorname>
+    {{speaker.us_firstname}} {{speaker.us_lastname}}
+    <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+  </button>
+</ion-item-group>

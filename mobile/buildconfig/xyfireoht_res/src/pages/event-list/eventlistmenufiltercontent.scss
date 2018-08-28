@@ -1,0 +1,23 @@
+eventlistmenufiltercontent {
+    .list-header {
+        margin-bottom: 0px;
+    }
+    .list-header {
+        font-size: 1.8rem;
+        color: color($colors,dark);
+        font-weight: 700;
+    }
+    .item {
+        font-size: 1.4rem;
+    }
+    .label {
+        margin-top: 20px;
+        margin-bottom: 1px;
+    }    
+    .list {       
+        margin-bottom: 10px;
+    }
+    .button-outline:hover:not(.disable-hover) {
+        color: color($colors,primary);
+    } 
+}

@@ -1,0 +1,8 @@
+<ion-item itembm (click)="btnClick(item.bg_id)">
+  <ion-thumbnail item-right class="thumbnailsmall">
+    <img [src]="item.ThumbImgStr">
+  </ion-thumbnail>
+  <h2 text-nowrap> {{item.bg_short_desc}}</h2>
+  <h6>{{item.bg_last_updated_date}}</h6>
+  <p> 状态：{{item.FieldValueDictionary['问题状态']}}</p>
+</ion-item>

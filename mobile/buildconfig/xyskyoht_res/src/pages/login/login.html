@@ -1,0 +1,32 @@
+<ion-header no-border>
+    <ion-navbar color="navbar">
+        <ion-title text-center>{{state.systemtitle}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content [class.noscroll]="1">
+    <inlinemessage></inlinemessage>
+    <div class="logo">
+        <img class="roundImgShadows" src="assets/img/appicon-svg.png" alt="logo">
+        <ion-label padding-top margin-top text-center stacked color="blackdark">{{_state.systemtitle}}</ion-label>
+    </div>
+    <form novalidate padding-top>
+        <ion-list class="loginList">
+            <ion-item id="ionInputNoBottonColor">
+                <ion-label inset color="dark">
+                    <ion-icon name="contact"></ion-icon>用户名</ion-label>
+                <ion-input placeholder="请输入系统分配的账号" [(ngModel)]="_state.username" name="username" type="text" #username="ngModel" spellcheck="false"
+                    autocapitalize="off" required>
+                </ion-input>
+            </ion-item>
+            <ion-item id="ionInputNoBottonColor">
+                <ion-label inset color="dark">
+                    <ion-icon name="lock"></ion-icon>密&emsp;码</ion-label>
+                <ion-input placeholder="请输入密码" [(ngModel)]="_state.password" name="password" type="password" #password="ngModel" required>
+                </ion-input>
+            </ion-item>
+        </ion-list>
+        <div padding margin-top>
+            <button ion-button [color]="mycolor" block (click)="doProcessClick($event)">登录</button>
+        </div>
+    </form>
+</ion-content>

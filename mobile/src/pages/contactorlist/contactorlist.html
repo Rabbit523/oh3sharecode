@@ -1,0 +1,9 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title>通讯录</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="outer-content speaker-list">
+    <ion-searchbar debounce="1000" (ionInput)="search($event)" placeholder="按名字过滤.."></ion-searchbar>
+    <contactorlistcomponent [state]="state" (itemTapped)="itemClickTapped($event)"></contactorlistcomponent>
+</ion-content>

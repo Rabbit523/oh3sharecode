@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="doprocessClick(0)">
+             <span class="text">取消</span>
+            </button>
+          </ion-buttons>
+      <ion-title text-center>{{state.HeadTitle}}</ion-title>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="doprocessClick(1)">
+            <span class="text">完成</span>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content class="outer-content">
+    <eventtaskedititem [itemEdit]="editState" [validate]="state.validate"></eventtaskedititem>  
+    <ng-container *ngIf="editState.Item.shortdesc">
+      <cameracomponentonecol *ngIf="!platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentonecol>
+      <cameracomponentweb *ngIf="platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentweb>
+    </ng-container>  
+  </ion-content>

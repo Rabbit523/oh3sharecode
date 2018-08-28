@@ -1,0 +1,12 @@
+<vg-player style="height: 50px;">
+    <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+        <vg-mute></vg-mute>
+    </vg-controls>
+    <audio vgMedia #media preload="auto">
+        <source [src]="src" [type]="type">
+    </audio>
+</vg-player>

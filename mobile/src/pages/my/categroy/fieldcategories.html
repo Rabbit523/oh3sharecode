@@ -1,0 +1,9 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title>分类设置</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-searchbar debounce="1000" (ionInput)="ItemsSearch($event)" placeholder="按名字过滤.."></ion-searchbar>
+    <categorylistcomponent [cateList]="categories" (itemclick)="EditCategory($event)"></categorylistcomponent>
+</ion-content>

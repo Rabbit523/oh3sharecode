@@ -1,0 +1,110 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title>测试页面</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="grid-basic-page">
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-auto>
+                    <ion-input type="text" placeholder="lat" [(ngModel)]="Arm.lat"></ion-input>
+                </ion-col>
+                <ion-col col-auto>
+                    <ion-input type="text" placeholder="lng" [(ngModel)]="Arm.lng"></ion-input>
+                </ion-col>
+                <ion-col col-auto>
+                    <ion-input type="text" placeholder="dkm" [(ngModel)]="Arm.dkm"></ion-input>
+                </ion-col>
+                <ion-col col-auto>
+                    <div (click)="findATrian()">计算车站</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-auto>
+                    经度：{{Arm.lat}} 纬度：{{Arm.lng}} 距离：{{Arm.dkm}}km
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col *ngFor="let a of Selected">
+                    <div>{{a}}</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-auto (click)="TestShipModel.Init()">
+                    <div>初始化TestShipModelState</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="TestShipModel.MergeGet0()">
+                    <div>合并事务fromID(Get)</div>
+                </ion-col>
+                <ion-col (click)="TestShipModel.MergeGet1()">
+                    <div>合并事务intoID(Get)</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="TestShipModel.MergePost()">
+                    <div>提交合并(Post)</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-auto (click)="HostSettingModel.Init()">
+                    <div>初始化HostsettingModelstate</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="HostSettingModel.GetNames()">
+                    <div>名字字典(Get)</div>
+                </ion-col>
+                <ion-col (click)="HostSettingModel.GetMobileKeys()">
+                    <div>Mobile显示(Get)</div>
+                </ion-col>
+                <ion-col (click)="HostSettingModel.GetPcKeys()">
+                    <div>Pc显示(Get)</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-auto (click)="CalcChartModel.Init()">
+                    <div>初始化CalcChartModel</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="CalcChartModel.GetCheckBoxs()">
+                    <div>获取字典(Get)</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="CalcChartModel.FirstLoad()">
+                    <div>首次加载图标(Get)</div>
+                </ion-col>
+                <ion-col (click)="CalcChartModel.ChangeChartXY()">
+                    <div>交换XY轴(Get)</div>
+                </ion-col>
+                <ion-col (click)="CalcChartModel.GetChartData()">
+                    <div>获取统计数据(Get)</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="CalcChartModel.SummaryCalc()">
+                    <div>按页统计(Get)</div>
+                </ion-col>
+                <ion-col (click)="CalcChartModel.D3Chart()">
+                    <div>分组散列数据(Get)</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>

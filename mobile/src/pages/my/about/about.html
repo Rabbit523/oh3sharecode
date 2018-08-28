@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title mr50>关于</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <div class="about-header">
+    <img src="assets/img/appicon-svg.png" alt="logo">
+  </div>
+  <ion-list>
+    <ion-list-header mb0>
+      软件详情
+    </ion-list-header>
+    <button id="small" ion-item>
+      <ion-icon name="information-circle" item-start color="primary"></ion-icon>
+      系统名称：{{systemtitle}}
+    </button>
+    <button id="small" ion-item>
+      <ion-icon name="planet" item-start color="secondary"></ion-icon>
+      当前版本：{{appVersion}}
+    </button>
+    <button id="small" ion-item (press)="EndBtnClick()">
+      <ion-icon name="leaf" item-start color="favorite"></ion-icon>
+      API 版本：{{updatemessage }}
+    </button>
+    <button id="small" ion-item>
+      <ion-icon name="home" item-start color="rcbg1"></ion-icon>
+      网站 API：{{webapiaddress}}
+    </button>
+    <button id="small" ion-item>
+      <ion-icon name="wifi" item-start color="rcbg3"></ion-icon>
+      网络状态：{{networkState}}
+    </button>
+    <button id="small" ion-item>
+      <ion-icon name="bug" item-start color="rcbg2"></ion-icon>
+      硬件 ID：{{UUid}}
+    </button>
+  </ion-list>
+
+</ion-content>

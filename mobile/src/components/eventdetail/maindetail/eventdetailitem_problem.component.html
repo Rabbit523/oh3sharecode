@@ -1,0 +1,72 @@
+<ion-item class="fillIcon">
+  <ion-label stacked color="dark">
+    {{shortdesc.label}}
+  </ion-label>
+  <ion-textarea rows="4" text-left type="text" [attr.readonly]="'true'" [value]="shortdesc.displayValue" readonly unselectable="on"></ion-textarea>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemResponsibleDepart.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemResponsibleDepart.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemResponsiblePerson.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemResponsiblePerson.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemCoordinateDepart.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemCoordinateDepart.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon" [hidden]="true">
+  <ion-label color="dark">
+    {{fieldProblemSuperviseDepart.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemSuperviseDepart.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon" [hidden]="true">
+  <ion-label color="dark">
+    {{fieldProblemMajorPerson.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemMajorPerson.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemFrom.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemFrom.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemType.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemType.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemLevel.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemLevel.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{fieldProblemProcessType.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="fieldProblemProcessType.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label stacked color="dark">
+    {{fieldProblemChange.label}}
+  </ion-label>
+  <ion-textarea rows="4" type="text" [attr.readonly]="'true'" [value]="fieldProblemChange.displayValue" onfocus=this.blur()></ion-textarea>
+</ion-item>
+<ion-item class="fillIcon">
+  <ion-label color="dark">
+    {{PlanDate.label}}
+  </ion-label>
+  <ion-input text-right type="text" [attr.readonly]="'true'" [value]="PlanDate.displayValue" onfocus=this.blur()></ion-input>
+</ion-item>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title class="title-right">{{subHeader}} 个人标签</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="EditChange()">
+        <span class="text">完成</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-list no-lines>
+    <ion-item margin-top>
+      <ion-label stacked color="dark">名称：</ion-label>
+      <ion-textarea rows="1" [(ngModel)]="item.name"></ion-textarea>
+    </ion-item>
+    <ion-item margin-top>
+      <ion-label color="dark">父节点：</ion-label>
+      <ion-select [(ngModel)]="item.parentid" okText="选择" cancelText="取消" placeholder="- 无 -">
+        <ion-option *ngFor="let aitem of userTags " [value]="aitem.id" [disabled]="item.id==aitem.id" [selected]="item.parentid">{{aitem.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item margin-top>
+      <ion-label color="dark">子标签</ion-label>
+      <ion-select [(ngModel)]="child" multiple="true" okText="选择" cancelText="取消" placeholder="- 无 -">
+        <ion-option *ngFor="let aitem of dicTags " [value]="aitem.id" [selected]="child.indexOf(aitem.id)>0">{{aitem.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

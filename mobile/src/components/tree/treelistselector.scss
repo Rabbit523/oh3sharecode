@@ -1,0 +1,44 @@
+treelistselector {
+    .round-button{
+      color: white;
+        font-weight: normal;
+        display: inline-block;
+        padding:0px;
+      }
+      .InputCheckBox{                      
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        margin: 16px 14px 13px 14px;
+        border: 2px solid #787878;
+      }      
+      .InputCheckText{
+        width: 100%;
+        display: inline-block;
+        padding: 13px 8px 13px 0px; 
+        font-size: 16px;
+      }
+      #InputCheckBtn{
+        margin-top: 0px; 
+        margin-bottom: 0px; 
+      }
+      #InputCheckBtn ion-icon{
+        padding:6px 5px 0px 5px;
+        font-size: 1.8em;
+      }
+      #InputCheckBtn .button[icon-only]{
+        height: 100%;
+      } 
+      .textdepath_1{margin-left: 6px;}      
+      .textdepath_2{margin-left: 32px;}
+      .textdepath_3{margin-left: 48px;}
+      .textdepath_1:before {
+        content: '\f0da'; 
+        font-family: FontAwesome; 
+        padding-right: 8px;
+        color: color($colors,label);
+      }
+      .col-custom {
+        border-bottom: 1px solid #dedede;
+      }
+}

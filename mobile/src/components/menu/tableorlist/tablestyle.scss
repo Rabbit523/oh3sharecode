@@ -1,0 +1,29 @@
+tablestyle {
+    #icon-Big {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+    .nightTableRow ion-item-divider {
+        margin-bottom: 0px;
+    } 
+    .col {
+        margin-bottom: 10px;
+    } 
+    .nightTableRow .badge-custom {
+        width: auto;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        font-size: 1rem;
+        background-color: color($colors,danger);;
+        padding:3px 4px 1px 4px;        
+    }
+    .badge-custom {
+        position: relative;
+    }    
+    button ion-label {
+        max-height: 82px;
+    }
+    .TableRow-title {
+        margin-top:5px;
+    }
+}

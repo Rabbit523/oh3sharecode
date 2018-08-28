@@ -1,0 +1,31 @@
+<ion-item (click)="ShowCategoriesModal()">
+  <ion-label>分类：</ion-label>
+  <ion-note item-right color="label">
+    {{DropDownTexts.CategoryName||'--请选择--'}}
+    <ion-icon item-right name="md-arrow-dropdown"></ion-icon>
+  </ion-note>
+</ion-item>
+<div *ngIf="showMain" [ngClass]="{'hidden': !showMain, 'animated fadeInLeft': showMain}">
+  <ion-item>
+    <ion-label stacked color="dark">
+      <small color="danger" [hidden]="shortdesc.valid && validate">*</small>描述：</ion-label>
+    <ion-textarea rows="4" [(ngModel)]="itemEdit.Item.shortdesc" required #shortdesc="ngModel"></ion-textarea>
+  </ion-item>
+  <ion-item (click)="ShowDepartModal()">
+    <ion-label color="dark">*负责人：</ion-label>
+    <ion-note item-right color="label">
+      {{DropDownTexts.AssignToName||'--请选择--'}}
+      <ion-icon item-right name="md-arrow-dropdown"></ion-icon>
+    </ion-note>
+  </ion-item>
+  <ion-item (click)="ShowParticipant()">
+    <ion-label color="dark">任务成员：
+      <ion-note float-right color="label" class="note-custom">
+        <h2 class="nowrap">{{DropDownTexts.BugParticipantsName||'--请选择--'}}
+          <ion-icon name="md-arrow-dropdown"></ion-icon>
+        </h2>
+      </ion-note>
+    </ion-label>
+  </ion-item>
+  <ionitemdatetime [LabelName]="'截止日期'" [PlannedEndDate]="itemEdit.Item.PlannedEndDate" (SetDate)="SetDate($event)" [DateFormat]="'YYYY-MM-DD HH:mm'"></ionitemdatetime>
+</div>

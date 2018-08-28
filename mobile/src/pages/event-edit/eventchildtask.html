@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="doprocessClcik(0)" [class.csdisplay]="waiting">
+                <span class="text">取消</span>
+            </button>
+        </ion-buttons>
+        <ion-title text-center>{{newstate.HeadTitle}}</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="doprocessClcik(1)">
+                <span class="text">完成</span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-list>
+        <ion-item-group>
+            <ion-item>
+                <ion-label stacked color="dark">
+                    <small color="danger" [hidden]="ItemDescription.valid && newstate.validate">*</small>标题：</ion-label>
+                <ion-textarea rows="4" required #ItemDescription="ngModel" [(ngModel)]="newstate.itemEdit.Item.Description"></ion-textarea>
+            </ion-item>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-item>
+                <ion-label inset color="dark">责任人：</ion-label>
+                <ion-select [(ngModel)]="newstate.itemEdit.Item.AssignedToUserId" okText="选择" cancelText="取消">
+                    <ion-option [value]="aitem.Value" *ngFor="let aitem of newstate.itemEdit.TaskUsers">{{aitem.Text}}</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-item-group>
+        <ionitemdatetime [LabelName]="'截止日期'" [PlannedEndDate]="newstate.itemEdit.Item.PlannedEndDate" (SetDate)="SetDate($event)"
+            [DateFormat]="'YYYY-MM-DD'"></ionitemdatetime>
+    </ion-list>
+</ion-content>

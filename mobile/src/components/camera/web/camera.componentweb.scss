@@ -1,0 +1,16 @@
+cameracomponentweb{    
+    #preview img{    
+        border: 1px solid #dcdcdc;
+        padding: 2px;
+        border-radius: 10px;
+        margin: 4px;        
+    }
+    #myFileInput{
+        width: 0px;
+    }
+    .icon-Big {
+        background-color:color($colors, light);
+        padding: 2px 4px;
+        border-radius: 5%;
+    }
+}

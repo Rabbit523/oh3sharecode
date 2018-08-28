@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-searchbar type="text" placeholder="请输入 编号/全文检索" [(ngModel)]="searchtext"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-end color="light" (click)="goToNumber()">
+        <ion-icon name="share-alt"></ion-icon>
+      </button>
+      <button ion-button icon-end color="light" (click)="goToSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <p class="p-custom">热门标签</p>
+  <ion-buttons text-center>
+    <button float-left ion-button clear small *ngFor="let tags of tags" (click)="tagsSearch(tags.name)">{{tags.name}}</button>
+  </ion-buttons>
+  <searchlist [items]="state|async" (openEvent)="goToEventDetail($event)"></searchlist>
+</ion-content>

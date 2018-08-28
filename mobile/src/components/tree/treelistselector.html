@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="navbar" [hideBackButton]="true">
+    <ion-buttons left>
+      <button ion-button icon-right (click)="doprocess(0)">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title mr50>
+      {{departmentpathname||departmentname}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <!-- tree -->
+  <ion-item-group tree *ngIf="CurrentCatagoryItems.length>0 ">
+    <ion-item-divider text color="light">{{Title[1]}}</ion-item-divider>
+    <ng-container *ngFor="let i=index, let employee of CurrentCatagoryItems">
+      <ion-row *ngIf="employee.show">
+        <ion-col col-auto>
+          <input class="InputCheckBox" id="employee_name{{employee.id}}" [(ngModel)]="employee.checked" (ngModelChange)="TreeitemClick(employee);" type="checkbox" />
+        </ion-col>
+        <ion-col class="col-custom">
+          <label for="employee_name{{employee.id}}">
+            <div class="InputCheckText textdepath_{{employee.depth}}">{{employee.name}}</div>
+          </label>
+        </ion-col>
+        <ion-col col-auto *ngIf="employee.expend!=-1 && employee.expend!=undefined" class="col-custom">
+          <div id="InputCheckBtn" (click)="TreeExpendClick(i)">
+            <ion-icon name="arrow-down" color="label" *ngIf="!employee.expend"></ion-icon>
+            <ion-icon name="arrow-up" color="label" *ngIf="employee.expend"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </ion-item-group>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="dark">
+    <p no-margin>
+      <button class="round-button small" *ngFor="let firstName of SelectFirstNames|slice:0:4">{{firstName}}</button>
+    </p>
+    <ion-buttons end>
+      <button ion-button icon-right outline (click)="doprocess(1)">
+        确定{{ SelectCotent |Parentheses }}
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

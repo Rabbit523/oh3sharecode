@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title mr50>
+      {{state.Filter.pageTitle}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-item-group>
+    <ion-item *ngFor="let item of state.myrecords.Items">
+      <eventlistitemtask [item]="item" (eventclick)="goToEventDetail($event)"> </eventlistitemtask>
+    </ion-item>
+  </ion-item-group>
+</ion-content>
+<ion-footer>
+  <pagination [pager]="state.pager" (search)="doSearch($event)"> </pagination>
+</ion-footer>

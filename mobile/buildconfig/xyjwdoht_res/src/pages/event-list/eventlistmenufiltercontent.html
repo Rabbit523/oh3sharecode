@@ -1,0 +1,41 @@
+<ion-row *ngFor="let i= index,let adic of dicState">
+        <ion-item (click)="SHowHide(i)">
+            <ion-label inset>{{adic.DefineFieldName|| "通用分类"}}：</ion-label>
+            <ion-note item-right color="label" style="margin-right: 5px;">
+                <span class='ion-note'>{{selectdisplay[i]}}</span>
+                <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+            </ion-note>
+        </ion-item>
+        <p [hidden]="!dicShow[i]" margin-left>
+            <span *ngFor="let j=index, let bread of treebread[i]">
+                <span [hidden]="j==0">&gt;</span>
+                <span class="breadgt" (click)="SelectBackItem(i,bread.Id)">{{bread.Name}}</span>
+            </span>
+            <br/>
+            <button class="btnList" small clear icon-start ion-button *ngFor="let item of selectedcat[i]" (click)="SelectItem(i,item.Id,adic.BindIdName)">{{item.Name}}</button>
+        </p>
+    </ion-row>
+    <ion-row>
+        <ion-item>
+            <ion-label>提报时间起:</ion-label>
+            <ion-datetime doneText="选择" cancelText="放弃" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" min="2015" [max]="maxDate"
+                [(ngModel)]="_DropDownValue.SeacrhDateS"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>提报时间止:</ion-label>
+            <ion-datetime doneText="选择" cancelText="放弃" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" min="2015" [max]="maxDate"
+                [(ngModel)]="_DropDownValue.SeacrhDateE"></ion-datetime>
+        </ion-item>
+    </ion-row>
+    <ion-footer>
+        <ion-row>
+            <ion-col text-center no-padding>
+                <button ion-button icon-left full color="light" (click)="MenuFilter(0)" class="button-foot">
+                    <ion-icon name='backspace' class="backspace"></ion-icon>关闭</button>
+            </ion-col>
+            <ion-col text-center no-padding>
+                <button ion-button icon-left full color="primary" (click)="MenuFilter(1)" class="button-foot">
+                    <ion-icon name='search'></ion-icon>确定</button>
+            </ion-col>
+        </ion-row>
+    </ion-footer>

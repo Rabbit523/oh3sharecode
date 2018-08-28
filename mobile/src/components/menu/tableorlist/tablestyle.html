@@ -1,0 +1,17 @@
+<ion-row class="nightTableRow" *ngFor="let aitem of items">
+    <ion-item-divider text color="light" *ngIf="items.length>1">{{aitem.G_title}}</ion-item-divider>
+    <ion-col *ngFor="let item of aitem.items">
+        <ion-card (click)="itemOpenModel(item.EnumId)">
+            <button no-padding ion-item>
+                <div>
+                    <ion-avatar id=roundicon round>
+                        <ion-icon id="icon-Big" [name]="item.IconName" [color]="item.P_color"></ion-icon>                        
+                    </ion-avatar>
+                    <div class="TableRow-title">{{item.H_title}}</div>
+                    <ion-badge notebadge item-left *ngIf="item.Count < 100 && item.Count != '0'" class="badge-custom">{{item.Count}}</ion-badge>
+                    <ion-badge notebadge item-left *ngIf="item.Count >= 100" class="badge-custom">99+</ion-badge>                    
+                </div>
+            </button>
+        </ion-card>
+    </ion-col>
+</ion-row>

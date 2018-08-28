@@ -1,0 +1,4 @@
+<ion-avatar>
+  <button class="round-button roundfix" [class.small]="small" *ngIf="HasPersonPicurl==false">{{PersonLastName}}</button>
+  <img [class.small]="small" [src]="PersonPicurl" *ngIf="HasPersonPicurl" alt="图">
+</ion-avatar>

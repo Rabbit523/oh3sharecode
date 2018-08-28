@@ -1,0 +1,15 @@
+<ion-card *ngFor="let item of PostItems">
+  <personpicdatetext item-left [PersonName]="item.personName" [PersonPicurl]="item.PersonPicurl" [PersonDate]="item.DateTimeStr"
+    [PhoneNo]="item.PersonPhone" [RightText]="item.postid">
+  </personpicdatetext>
+  <hr>
+  <ion-row no-padding wrap>
+    <ion-col>
+      <div [innerHTML]="item.ShowText"></div>
+      <imgcard [imageclass]="'postimageclass'" [sourcesrc]="item.ImgAnchor" [thumbsrc]="item.ImgSrc" [title]="" [subtitle]="" *ngIf="item.Imgtype==='image'"></imgcard>
+      <singlevideoplayer [src]="item.ImgSrc" [type]="item.ContentType" *ngIf="item.Imgtype==='video'"></singlevideoplayer>
+      <singleaudioplayer [src]="item.ImgSrc" [type]="item.ContentType" *ngIf="item.Imgtype==='audio'"></singleaudioplayer>
+      <span *ngIf="item.Imgtype==='file'">附件：{{item.ImgAnchor}}</span>
+    </ion-col>
+  </ion-row>
+</ion-card>

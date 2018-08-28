@@ -1,0 +1,12 @@
+page-mytractor-list {
+    .item ion-avatar[item-start], .item ion-thumbnail[item-start] {
+        margin-right: 6px;
+    }
+    .badge {
+        min-width: 55px;
+    }
+    .outer-content h2 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+}

@@ -1,0 +1,14 @@
+eventedititem {
+    ion-select {
+        max-width: 65%;
+    }
+    ion-item-group {
+        margin-top: 16px;
+    }
+    .ion-note {
+        color: color($colors, dark);
+    }
+    .asterisk {
+        color: color($colors, danger);
+    }
+}

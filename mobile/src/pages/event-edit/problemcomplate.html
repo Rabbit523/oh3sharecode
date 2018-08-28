@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="doprocess(0)" [class.csdisplay]="waiting">
+                <span class="text">取消</span>
+            </button>
+        </ion-buttons>
+        <ion-title>{{state.HeadTitle}}</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="doprocess(1)">
+                <span class="text">完成</span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-list>
+        <ion-item>
+            <ion-label color="dark" stacked>信息备注:</ion-label>
+            <ion-textarea rows="4" [(ngModel)]="state.comment"></ion-textarea>
+        </ion-item>
+        <ion-item no-lines>
+            <ion-label color="dark">附图:</ion-label>
+        </ion-item>
+        <cameracomponentonecol *ngIf="!platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentonecol>
+        <cameracomponentweb *ngIf="platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentweb>
+    </ion-list>
+</ion-content>

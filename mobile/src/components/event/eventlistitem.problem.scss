@@ -1,0 +1,28 @@
+eventlistitemproblem {
+    .item p {
+        margin-top: 5px;
+        font-size: 1.3rem;
+        color: color($colors,blackdark);
+    }
+    ion-thumbnail.thumbnailsmall img {
+        max-width: 55px;
+        max-height: 55px;
+        border-radius:10px;
+        background: #ededed;
+    }
+    h2 {
+        font-size: 1.5rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .item.item-block .item-inner {
+        padding-right: 0px;
+    }
+    .item ion-thumbnail[item-right] {
+        margin-right: 0px;
+    }
+    .item h6 {
+         font-size: 1.2rem;
+         color: color($colors,label);
+    }
+}

@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar color="navbar">
+      <ion-title ml50>{{'tabs.tab0Root'|translate}}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (tap)="search()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    <ion-slides #mySlides pager class="slides-custom" loop="true" autoplay="3000">
+      <ion-slide *ngFor="let _img of sildePic">
+        <img [src]="_img" />
+      </ion-slide>
+    </ion-slides>
+    <calcgridstatus></calcgridstatus>
+    <firstpageitem [items]="PageList" (openModel)="itemOpenModel($event)"></firstpageitem>
+  </ion-content>

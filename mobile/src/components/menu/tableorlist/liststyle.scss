@@ -1,0 +1,20 @@
+liststyle {
+    #roundicon {
+        padding-top: 0px;
+        background-color: transparent;
+        margin-right: 6px;
+    }
+    #icon-Big {
+        font-size: 40px;
+        margin-top: 5px;
+    }
+  
+    #badge-custom {
+        border-radius: 10px;
+        font-weight: bold;
+        border: 2px solid #fff;
+        font-size: 1rem;
+        background-color: color($colors,danger);
+        padding-top:5px;
+    }
+}

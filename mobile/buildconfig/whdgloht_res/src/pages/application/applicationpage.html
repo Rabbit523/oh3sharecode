@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title>应用</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggletableOrList()">        
+        <ion-icon *ngIf="tableOrList" name="list-box"></ion-icon>
+        <ion-icon [hidden]="tableOrList" name="apps"></ion-icon>        
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content> 
+  <tablestyle *ngIf="!tableOrList" [items]="PageList" (openModel)="itemOpenModel($event)"></tablestyle>
+  <liststyle *ngIf="tableOrList" [items]="PageList" (openModel)="itemOpenModel($event)"></liststyle>
+</ion-content>

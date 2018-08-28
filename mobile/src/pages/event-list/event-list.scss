@@ -1,0 +1,38 @@
+eventlist {
+    ion-card img {
+        width: auto;
+    }
+    .toolbar-title {
+        font-size: 1.8rem;
+    }    
+    .button {
+        margin: 0px;
+        max-height: 3.6rem;
+        width: 100%;
+    }
+    .label {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }  
+    .button-foot {
+        height: 3.6rem;
+    }
+    .divider-custom {
+        max-height: 26px;        
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }   
+    #fabu {
+        border-bottom: 1px solid #dcdcdc;
+    }
+    .item-custom {
+        margin-bottom: 10px;
+        box-shadow: 0 1px 2px #dcdcdc;
+    }
+    .chart {
+        font-weight: 700;
+    }
+    .list {       
+        margin-bottom: 10px;
+    }
+}

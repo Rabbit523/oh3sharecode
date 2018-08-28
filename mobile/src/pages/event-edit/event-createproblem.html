@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title text-center>{{state.header}}{{state.HeadTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-list>
+    <ion-item>
+      <ion-label stacked color="dark">
+        <small color="danger" [hidden]="Itemshortdesc.valid">*</small>问题描述：</ion-label>
+      <ion-textarea type=text required #Itemshortdesc="ngModel" rows="4" [(ngModel)]="editState.Item.shortdesc"></ion-textarea>
+    </ion-item>
+    <mediatoolboxcomponent *ngIf="!platformIsMobileWeb" (FilesChange)="SetPath($event)" (MoveToEvent)="MoveTo($event)"></mediatoolboxcomponent>
+    <cameracomponentweb *ngIf="platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentweb>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-row justify-content-center class="row-custom">
+    <ion-col col-4 no-padding>
+      <button ion-button icon-left full color="light" (click)="doprocessClick(0)" class="button-foot">
+        <ion-icon name='close-circle' is-active="false" color="primary"></ion-icon>
+        取消
+      </button>
+    </ion-col>
+    <ion-col col-4 no-padding>
+      <button ion-button icon-left full color="light" class="button-foot">
+        <ion-icon name='alert' color="primary"></ion-icon>
+        暂存
+      </button>
+    </ion-col>
+    <ion-col col-4 no-padding>
+      <button ion-button icon-left full color="light" (click)="doprocessClick(1)" class="button-foot">
+        <ion-icon name='checkmark-circle' color="primary"></ion-icon>
+        提交
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

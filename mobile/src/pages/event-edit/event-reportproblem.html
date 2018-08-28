@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="doprocessClick(0)"> 
+           <span class="text">取消</span>
+          </button>
+    </ion-buttons>
+    <ion-title text-center>{{state.header}}{{state.HeadTitle}}</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="doprocessClick(1)">    
+          <span class="text">完成</span>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-list>
+    <eventeditproblem [(bugProblem)]="bugProblem" [(ItemDetail)]="editState" [validate]="state.validate"></eventeditproblem>
+    <ion-item-group>
+      <ion-item>
+        <ion-label color="dark" stacked>附件图片列表:</ion-label>
+      </ion-item>
+      <img *ngFor="let pic of PostImgArray" [src]="pic.ImgSrc" (click)="showpicture(pic.ImgAnchor)" />
+      <cameracomponenttwocol (pathArry)="SetPath($event)"></cameracomponenttwocol>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

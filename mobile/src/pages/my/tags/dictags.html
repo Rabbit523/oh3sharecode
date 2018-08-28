@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title>{{subHeader}} 基础标签</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="EditChange()">
+        <span class="text">完成</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-item margin-top no-lines>
+    <ion-label stacked color="dark">名称：</ion-label>
+    <ion-input type="text" placeholder="输入标签" [(ngModel)]="item.name"></ion-input>
+  </ion-item>
+</ion-content>

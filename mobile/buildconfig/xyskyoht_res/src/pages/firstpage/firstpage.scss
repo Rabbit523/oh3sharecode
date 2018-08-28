@@ -1,0 +1,24 @@
+firstpage { 
+    .colfont {
+        margin-top: 15px;
+        color: color($colors,navbar);
+        font-size: 1.7rem;
+    }
+   .slides-custom{
+        height: 160px;
+        width: 100%;
+        ion-slide{
+          height: 160px;
+          width: 100%;
+          img{
+            height: 160px;            
+            width: 100%;
+          }
+        }
+      }
+      .search {
+        position: absolute;
+        z-index: 2;    
+      }
+
+}

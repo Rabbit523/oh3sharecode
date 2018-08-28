@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="DoprocessClick(0)">
+        <span class="text">取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>{{state.header}}{{state.HeadTitle}}</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="DoprocessClick(1)">
+        <span class="text">完成</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        <small color="danger" [hidden]="Itemshortdesc.valid && state.validate">*</small>问题描述：</ion-label>
+      <ion-textarea rows="4" required #Itemshortdesc="ngModel" [(ngModel)]="editState.Item.shortdesc"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">*{{bugProblem.fieldProblemFrom.Item.custom_LabelName}}:</ion-label>
+      <ion-select [(ngModel)]="bugProblem.fieldProblemFrom.Item.cd_value" okText="选择" cancelText="取消" placeholder="--请选择--">
+        <ion-option [value]="aitem.ct_id" *ngFor="let aitem of bugProblem.fieldProblemFrom.Dropdown">{{aitem.ct_name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <cameracomponentonecol *ngIf="!platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentonecol>
+    <cameracomponentweb *ngIf="platformIsMobileWeb" (pathArry)="SetPath($event)"></cameracomponentweb>
+  </ion-list>
+  <ion-list class="imgSelected" no-lines>
+    <ion-item *ngFor="let pic of PostImgArray">
+      <img [src]="pic.ImgSrc" (click)="showpicture(pic.ImgAnchor)" />
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,18 @@
+search {
+    .searchbar .searchbar-input {    
+        border-radius: 4px; 
+        font-size: 1.4rem;    
+        line-height: 1.8rem;    
+        background-color: color($colors,light);
+        padding: 6px 40px 6px 40px;         
+    }
+    .searchbar .searchbar-search-icon {
+        top: 7px;
+        left:12px;
+    }
+    .p-custom {
+        color:color($colors,blackdark);
+        text-align:center;
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,25 @@
+page-about {
+  .about-header {
+    padding: 16px;
+    width: 100%;
+    min-height: 150px;
+    text-align: center;
+    background: -webkit-radial-gradient(#999, #333); 
+    background: -o-radial-gradient(#999, #333);
+    background: -moz-radial-gradient(#999, #333);
+    background: radial-gradient(#999, #333);
+  }
+  .about-header img {
+    max-width: 120px;
+    min-height: 115px;
+    margin-left: -15px;
+    padding: 10px 0 5px 0;
+  }
+  ion-list-header[mb0]{
+    border-bottom: 2px solid #dedede;    
+    margin-bottom: 0px;
+  }
+  #small .item-inner{
+       margin-left: 5px;
+     }
+}

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="navbar" [hideBackButton]="true">
+    <ion-buttons left>
+      <button ion-button icon-right (click)="doprocess(0)">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      {{departmentpathname||departmentname}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- nav push -->
+<ion-content class="outer-content">
+  <ion-item-group nav *ngIf="subdepartments.length>0">
+    <ion-item-divider text color="light">{{Title[0]}} ({{subdepartments.length}})</ion-item-divider>
+    <button ion-item *ngFor="let department of subdepartments" (click)="catagoryClick(department)">
+      {{department.name}}
+      <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+    </button>
+  </ion-item-group>
+  <ion-item-group nav *ngIf="CurrentCatagoryItems.length>0">
+    <ion-item-divider text color="light">{{Title[1]}} ({{CurrentCatagoryItems.length}})</ion-item-divider>
+    <ion-item *ngFor="let employee of CurrentCatagoryItems" class="optional-filter-container">
+      <!-- <ion-label>{{employee.name}}</ion-label>
+      <ion-checkbox color="theme-primary" [(ngModel)]="employee.checked" (ngModelChange)="TreeitemClick(employee);"></ion-checkbox> -->
+      <ion-label>
+          <input class="InputCheckBox" id="employee_name{{employee.id}}" [(ngModel)]="employee.checked" (ngModelChange)="TreeitemClick(employee);"
+            type="checkbox" />
+          <label for="employee_name{{employee.id}}">
+            <div class="InputCheckText">{{employee.name}}</div>
+          </label>
+      </ion-label>
+    </ion-item>
+  </ion-item-group>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <p no-margin>
+      <button class="round-button small" *ngFor="let firstName of SelectFirstNames|slice:0:4">{{firstName}}</button>
+    </p>
+    <ion-buttons end>
+      <button ion-button icon-right outline (click)="doprocess(1)">
+        确定{{ SelectCotent |Parentheses }}
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

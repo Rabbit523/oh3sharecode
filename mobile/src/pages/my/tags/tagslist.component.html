@@ -1,0 +1,13 @@
+<ion-list class="list-custom">
+    <ion-list-header class="header-custom">
+        <ion-icon class="fa fa-caret-right" color="primary"></ion-icon>
+        标签分类
+        <button ion-button clear item-end height30 (click)="itemClick(0)">
+            <ion-icon name="add" class="icon-Big" color="label"></ion-icon>
+        </button>
+    </ion-list-header>
+    <ion-item *ngFor="let item of Items" (click)="itemClick(item.id)">
+        <h2>{{item.name}}</h2>
+        <ion-icon name="md-create" class="icon-small" color="label" item-end></ion-icon>
+    </ion-item>
+</ion-list>

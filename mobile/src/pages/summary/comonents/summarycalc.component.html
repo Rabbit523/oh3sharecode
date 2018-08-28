@@ -1,0 +1,12 @@
+<ion-toolbar>
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button *ngFor="let it of slides" value="{{it.id}}" (click)="onSegmentChanged(it.id)">
+      {{it.Name}}
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+<ion-slides #loopSlider (ionSlideDidChange)="onSlideChanged($event)">
+  <ion-slide flex-start scroll *ngFor="let slide of slides">
+    <canvas id="{{slide.barChartId}}"></canvas>
+  </ion-slide>
+</ion-slides>

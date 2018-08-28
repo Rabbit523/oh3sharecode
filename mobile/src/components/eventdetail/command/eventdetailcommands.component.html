@@ -1,0 +1,14 @@
+<ion-fab right bottom #ionFab *ngIf=" commands.length > 0">
+  <button ion-fab color="light"><ion-icon name="arrow-dropup-circle"></ion-icon></button>
+  <ion-fab-list side="top" >
+    <button ion-fab *ngFor="let btn of commands" (click)="CommandClick(btn.index)">
+      <ion-icon [name]="btn.Icon"></ion-icon>
+        <ion-label>{{btn.Name}}</ion-label>
+    </button>
+  </ion-fab-list>
+</ion-fab>
+<div padding>
+  <button ion-button color="primary" block (click)="ClosePage()">    
+       <ion-icon name='checkmark' item-left></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;确定
+    </button>
+</div>

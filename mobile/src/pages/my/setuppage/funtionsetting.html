@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title>简单功能配置</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+
+  <ion-card mycard>
+    <ion-card-header>
+      <span>功能开关</span>
+    </ion-card-header>
+    <ion-item>
+      <ion-toggle [(ngModel)]="Note"></ion-toggle>
+      <ion-label>
+        我的书签
+      </ion-label>
+      <span class="fa-stack" item-start>
+        <ion-icon class="fa fa-square fa-stack-2x" color="rcbg2"></ion-icon>
+        <ion-icon class="fa fa-address-card-o fa-stack-1x fa-inverse"></ion-icon>
+      </span>
+    </ion-item>
+  </ion-card>
+</ion-content>

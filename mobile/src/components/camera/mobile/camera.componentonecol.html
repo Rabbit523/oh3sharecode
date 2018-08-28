@@ -1,0 +1,9 @@
+<ion-item>
+  <ion-row class="imgSelected">
+    <ion-avatar *ngFor="let pic of profilePicture">
+      <img [src]="pic" (click)="showpicture(pic)" />
+    </ion-avatar>
+    <ion-icon name="images" class="icon-Big" (click)="PopAlertClick()" *ngIf=" profilePicture.length == 0" color="label"></ion-icon>
+    <ion-icon name="images" class="icon-Big" (click)="PopAlertClick()" *ngIf="profilePicture.length > 0" color="label"></ion-icon>
+  </ion-row>
+</ion-item>

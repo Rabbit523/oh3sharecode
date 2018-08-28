@@ -1,0 +1,23 @@
+<div class="segmentTabs">
+  <ion-segment [(ngModel)]="segment" (click)="updatePost()">
+    <ion-segment-button value="excludeupdate">评论</ion-segment-button>
+    <ion-segment-button value="update">历史记录</ion-segment-button>
+  </ion-segment>
+  <div class="segmentTabs-Contents">
+    <ion-card *ngFor="let item of PostItems">
+      <personpicdatetext item-left [PersonName]="item.personName" [PersonPicurl]="item.PersonPicurl" [PersonDate]="item.DateTimeStr"
+        [PhoneNo]="item.PersonPhone" [RightText]="item.postid">
+      </personpicdatetext>
+      <hr>
+      <ion-row no-padding wrap>
+        <ion-col>
+          <div [innerHTML]="item.ShowText"></div>
+          <imgcard [imageclass]="'postimageclass'" [sourcesrc]="item.ImgAnchor" [thumbsrc]="item.ImgSrc" [title]="" [subtitle]="" *ngIf="item.Imgtype==='image'"></imgcard>
+          <singlevideoplayer [src]="item.ImgSrc" [type]="item.ContentType" *ngIf="item.Imgtype==='video'"></singlevideoplayer>
+          <singleaudioplayer [src]="item.ImgSrc" [type]="item.ContentType" *ngIf="item.Imgtype==='audio'"></singleaudioplayer>
+          <span *ngIf="item.Imgtype==='file'">附件：{{item.ImgAnchor}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</div>

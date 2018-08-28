@@ -1,0 +1,71 @@
+<ion-list>
+    <ion-list *ngIf="showview && state.menuList.length>1">
+        <ion-list-header>视图切换</ion-list-header>
+        <ion-item>
+            <ion-row>
+                <ion-col *ngFor="let m of state.menuList" col-4>
+                    <button (click)="viewclick(m.key)" ion-button small outline class="text-button text-larger" [class.btnactive]="m.checked">{{m.value}}</button>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+    <ion-list-header>列表筛选</ion-list-header>
+    <ng-container *ngIf="filter.showdropdownfilter">
+        <ion-item>
+            <ion-label>工作群组：</ion-label>
+            <ion-select [(ngModel)]="_DropDownValue.pj" okText="选择" cancelText="取消" placeholder="-- 请选择 --">
+                <ion-option *ngFor="let item of state.DropDownFilter.Projects" [value]="item.value">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>责任部门：</ion-label>
+            <ion-select [(ngModel)]="_DropDownValue.Og" okText="选择" cancelText="取消" placeholder="-- 请选择 --">
+                <ion-option *ngFor="let item of state.DropDownFilter.Organizatoins" [value]="item.value">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>责任人：</ion-label>
+            <ion-select [(ngModel)]="_DropDownValue.Asto" okText="选择" cancelText="取消" placeholder="-- 请选择 --">
+                <ion-option *ngFor="let item of state.DropDownFilter.AssignedTos" [value]="item.value">{{item.value|ReplaceComa}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>创建人：</ion-label>
+            <ion-select [(ngModel)]="_DropDownValue.RpBy" okText="选择" cancelText="取消" placeholder="-- 请选择 --">
+                <ion-option *ngFor="let item of state.DropDownFilter.AssignedTos" [value]="item.value">{{item.value|ReplaceComa}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+    </ng-container>
+
+    <ion-item *ngFor="let adic of dicState">
+        <ion-label>{{adic.DefineFieldName || "通用分类"}}：</ion-label>
+        <ion-select [(ngModel)]="_DropDownValue.SCt[adic.BindIdName]" okText="选择" cancelText="取消">
+            <ion-option value="">无过滤</ion-option>
+            <ion-option *ngFor="let item of adic.DefineFields" [value]="item.Id">{{item.Name}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>提报时间起:</ion-label>
+        <ion-datetime doneText="选择" cancelText="放弃" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" min="2015" [max]="maxDate"
+            [(ngModel)]="_DropDownValue.SeacrhDateS"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>提报时间止:</ion-label>
+        <ion-datetime doneText="选择" cancelText="放弃" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" min="2015" [max]="maxDate"
+            [(ngModel)]="_DropDownValue.SeacrhDateE"></ion-datetime>
+    </ion-item>
+</ion-list>
+<ion-footer>
+    <ion-row>
+        <ion-col text-center no-padding>
+            <button ion-button icon-left full color="light" (click)="MenuFilter(0)" class="button-foot">
+                <ion-icon name='backspace' class="backspace"></ion-icon>关闭</button>
+        </ion-col>
+        <ion-col text-center no-padding>
+            <button ion-button icon-left full color="primary" (click)="MenuFilter(1)" class="button-foot">
+                <ion-icon name='search'></ion-icon>确定</button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

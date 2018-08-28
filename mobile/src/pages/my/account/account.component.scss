@@ -1,0 +1,15 @@
+pageaccountcomponent {
+    ion-item[text-center] H2,{
+        color: white;
+    }    
+    
+    ion-item[text-center] {
+        background: -webkit-radial-gradient(#999, #333); 
+        background: -o-radial-gradient(#999, #333);
+        background: -moz-radial-gradient(#999, #333);
+        background: radial-gradient(#999, #333);
+        padding-top: 20px;
+        padding-bottom:10px;
+        margin-top: 0px;
+    } 
+}

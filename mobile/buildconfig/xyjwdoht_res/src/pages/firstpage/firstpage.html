@@ -1,0 +1,9 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title mr50>{{'tabs.tab0Root'|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <firstpageitem [items]="PageList" (openModel)="itemOpenModel($event)"></firstpageitem>
+</ion-content>
+

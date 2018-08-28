@@ -1,0 +1,16 @@
+<ion-list no-margin>
+  <ion-item>
+    <ion-avatar item-left>
+      <button class="round-button" *ngIf="HasCreaterPicurl==false">{{CreaterLastName}}</button>
+      <img item-right [src]="CreaterPicurl" *ngIf="HasCreaterPicurl" alt="图">
+    </ion-avatar>
+    
+    <button ion-button   >
+    <namedatephonecomponent [PersonName]="_CreaterName" [Description]="Description" 
+     [PhoneNo]="PhoneNo">
+    </namedatephonecomponent>   
+    </button>
+
+     <span item-right>{{PhoneNo}}</span>
+    </ion-item>
+</ion-list>

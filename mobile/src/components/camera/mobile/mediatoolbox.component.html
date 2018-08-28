@@ -1,0 +1,18 @@
+<mediatoolcomponentrecord (AddAFileEvent)="AddAFile($event)" (MoveToEvent)="MoveTo($event)"></mediatoolcomponentrecord>
+<ion-list *ngFor="let file of filesArray">
+  <ion-item *ngIf=" file.attachmentType == 2">
+    <ion-icon name="close-circle" color='label' (click)="deletefile(file)" item-start></ion-icon>
+    <img class="imagesize" [src]="file.filename" (click)="showpicture(file.filename)" />
+  </ion-item>
+  <ion-item *ngIf=" file.attachmentType == 0">
+    <ion-icon name="close-circle" color='label' (click)="deletefile(file)" item-start></ion-icon>
+    <ion-icon name="volume-up" color='blackdark' class="icon-Big" (click)="PlayAudioClick(file.filename)"></ion-icon>
+  </ion-item>
+  <ion-item *ngIf=" file.attachmentType == 1">
+    <ion-icon name="close-circle" color='label' (click)="deletefile(file)" item-start></ion-icon>
+    <ion-icon name="play" color='blackdark' class="icon-Big" (click)="PlayVideoClick(file.filename)"></ion-icon>
+  </ion-item>
+  <ion-item *ngIf=" file.attachmentType > 2">
+    {{file.filename}} {{file.comment}}
+  </ion-item>
+</ion-list>

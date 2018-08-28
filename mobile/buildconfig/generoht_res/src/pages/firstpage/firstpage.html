@@ -1,0 +1,35 @@
+<ion-header no-border multiheader>
+  <ion-navbar color="navbar">
+    <ion-title padding-left margin-left>{{'tabs.tab0Root'|translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="search()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <firstpagetoolbar id="multiheader" [items]="PageList" (openModel)="itemOpenModel($event)"></firstpagetoolbar>
+  <ion-item-divider color="light" class="divider-custom"></ion-item-divider>
+  <ion-toolbar id="multiheader">
+    <ion-segment [(ngModel)]="slides.selectedSegment" (ionChange)="onSegmentChanged($event)">
+      <ion-segment-button *ngFor="let it of slides.Items" value="{{it.id}}">
+        {{it.Name}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-slides *ngIf="slides.Items.length>1" #loopSlider (ionSlideDidChange)="onSlideChanged($event)">
+    <ion-slide flex-start scroll *ngFor="let slide of slides.Items">
+      <ion-list>
+        <eventlistitemproblem *ngFor="let item of slide.items" [item]="item" (eventclick)="goToEventDetail($event)"></eventlistitemproblem>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+  <ion-slides *ngIf="slides.Items.length==1">
+    <ion-slide flex-start scroll>
+      <ion-list>
+        <todocomponent *ngFor="let item of slides.Items[0].items" [item]="item" (eventclick)="goToEventDetail($event)"></todocomponent>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

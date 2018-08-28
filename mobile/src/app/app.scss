@@ -1,0 +1,521 @@
+.outer-content {
+    background-color: color($colors,light);
+}
+[ml50]{
+    margin-left:30px;
+ } 
+[mr50]{
+    margin-right:50px;
+ } 
+[itembm]{
+    border-bottom: 8px solid color($colors,light);        
+}
+[minheight50]{
+    min-height: 50px;
+}
+[mycard] {
+     margin: 0px;
+     width:100%;
+}
+[nopadtop]{
+    padding-top: 0px;
+}
+.badge-custom {
+    color: color($colors,danger);
+    width: 0px;
+    display: inline-block;
+    font-family: Arial;
+} 
+
+/* 弹出框修改 */
+.select-alert .alert-wrapper {
+    border-radius: 16px;
+}
+.select-alert .alert-title {
+    font-size: 18px;
+    font-weight: 500;    
+}
+.select-alert .alert-head {
+    border-bottom: 1px solid #dedede;
+    margin-bottom: -1px;
+}
+/**
+全局样式重写
+**/
+#ionInputNoBottonColor,#ionInputNoBottonColor .item-inner {
+    border-bottom-color: #dcdcdc; 
+    -webkit-box-shadow:none;// inset 0 0 0 0 #dcdcdc; 
+    box-shadow: none;// inset 0 0 0 0 #dcdcdc; 
+}
+.toolbar-title {   
+    text-align: center;
+}
+.header .toolbar .toolbar-background {
+    background: -webkit-linear-gradient(to right,#508cfe, #39b8fd);
+    background: -o-linear-gradient(to right,#508cfe, #39b8fd);
+    background: -moz-linearlinear-gradient(to right,#508cfe, #39b8fd);
+    background: linear-gradient(to right,#508cfe, #39b8fd);    
+}
+ion-item-divider{
+    max-height: 15px;
+    min-height: 15px;
+    height: 15px;
+}
+
+ion-item-divider[text]{
+    max-height: 30px;
+    min-height: 30px;
+    height: 30px;
+}
+.text-bold {
+    font-weight: bold !important;
+    font-size: 17px !important;
+}
+.text-label ,p.plabel{
+    color: color($colors,label);
+}
+.block {
+    display: block !important;
+}
+button[block]{
+     font-size: 2rem;
+ } 
+.icon-Big,#icon-Big{
+    font-size:40px;
+}
+.btnactive{
+    background-color: color($colors, primary);
+    color:white;
+}
+.csdisplay{
+    display: none;
+}
+.bold {
+  font-weight: bold;
+}
+.noscroll {
+    overflow-y: hidden;
+ }
+ h2{
+     line-height: 1.5em;
+     word-break: break-all;
+ }
+/**
+footer segment button
+**/
+.highlight{    
+    color:color($colors, danger);
+    padding: 1px;
+}
+#footerBar,#footerBar ion-icon{
+    font-size: 1.2em;
+    padding-right:5px;
+    line-height: 50px;
+}
+.title-custom {
+    margin-right: 15px;
+}
+/**
+multiheader
+**/
+ion-header[multiheader]{
+    ion-item-divider{
+        background-color: color($colors,textbgc);
+    }
+    ion-avatar  button,ion-avatar img{
+      margin:0 auto;
+    }
+}
+/***********  
+post detail segmentTabs  
+***********/
+.segmentTabs{    
+    padding-bottom:5px;
+    background-color: color($colors,light);
+    min-height: 400px;
+}
+.segmentTabs ion-segment{
+    width: 210px;
+}
+.segmentTabs .segment-button{    
+    font-weight: bold;
+    height: 3em;
+    line-height: 3em;
+    color:color($colors,blackdark);
+}
+
+.segmentTabs .segment-activated{    
+    color:color($colors,primary);
+}
+.segmentTabs .segmentTabs-Contents{
+    margin-top:-1px;
+    min-height: 100px;
+}
+
+/***********  
+event detail card  
+******************/
+ ion-thumbnail.thumbnailsmall{
+    min-width: 40px;
+    min-height: 40px;      
+ }
+
+ ion-thumbnail.thumbnailsmall img{
+    max-width: 40px;
+    max-height: 40px;
+    margin-left: 5px;
+ }
+ 
+.eventdetailcard{
+    width: 100%;
+    margin-left:0px;
+    margin-right:0px;  
+}
+.eventdetailcard ion-card-title{
+    font-size: 1.4rem;    
+    font-weight: 600;
+}
+.eventdetailcard p.viewdetail{    
+    color:color($colors, blackdark);
+    font-size:13px;
+}
+
+/***********  
+task detail list  
+**************/
+.ataskItem{
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: bold
+}
+.taskDate{
+    background-color:color($colors, textbgc);
+    font-size: 13px;
+    border-radius: 6px;
+    color:color($colors,dark);
+}
+.taskComplate{
+    color:color($colors, label);
+}
+.bigCheckBox{
+    width: 18px;
+    height: 18px;
+}
+[float-right]{
+    float: right;
+    margin: 0;
+}
+h1[text-warp],h2[text-warp],h3[text-warp]{
+    white-space: pre-line;
+}
+.item-block[flex-start],
+ion-slide[flex-start]{
+    align-items: flex-start;
+}
+ion-slide[scroll]{
+    overflow-y:scroll;
+}
+/*********** 
+post detail item  
+*************/
+p.posttext{   
+   color:color($colors, blackdark);
+   font-size:10px;
+   padding: 2px 0 2px 0;
+}
+.postimageclass
+{
+  max-width: 100%;
+  max-height: 300px;
+  width:auto;
+}
+
+/************** 
+camera component modal
+******************/
+.cameraRow{
+    border: 1px dotted #dcdcdc;    
+}
+.imgSelected img{
+    padding: 5px;
+    margin: 5px auto;    
+}
+.newRowAlertBtn{
+    width: 100%; 
+}
+.newRowAlertBtn span{
+       display: block;
+       text-align: center;
+       font-size: 15px;
+}
+
+  /*********** 
+  label
+  *************/  
+  .label[stacked]{
+      font-size: 16px;
+  }
+  /*************  
+  User Thumb Round   
+  ***************/
+  .round-button {
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    //border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:color($colors,dark);
+    text-align:center;
+    text-decoration:none;
+    background: color($colors,roundbtnc);
+    box-shadow: 0 0 3px gray;
+    font-size:16px;
+    font-weight:bold;
+}
+.round-button.small{
+    width:40px;
+    height:40px;
+    line-height:30px;
+    font-size:14px;
+}
+/**************  
+Problem Card Item  
+***************/
+p.wrap{
+   white-space: normal;
+}
+.vtop.item-block {
+   align-items: flex-start;
+}
+.fillIcon.item ion-icon[item-left] + .item-inner{
+    margin-left: 0px;
+}
+/**
+category tree css
+**/
+button.item-button[height30],button.button[height30]{
+   height: 30px;
+}
+button.item-button[height20],button.button[height20]{
+   height: 20px;
+}
+
+.depth-1{padding-left:15px}
+.depth-2{padding-left:35px}
+.depth-3{padding-left:55px}
+.depth-4{padding-left:75px}
+.depth-5{padding-left:95px}
+
+/**
+ion-fab-list  
+add label
+**/
+ button[ion-fab] {
+        overflow: visible;
+        position: relative;
+        ion-label {
+            position: absolute;
+            top: -8px;
+            right: 40px;
+            color: white;
+            background-color:rgba(0,0,0,0.7);
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+            line-height: 24px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border-right: 0px;
+        }
+    }
+.fab {contain: layout;}
+
+
+/* modal back button */ 
+ion-buttons button[icon-only].backformodal {
+   margin: 0 6px;
+   min-width: 36px;
+}
+/* toast center box*/
+.MytoastClass{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 150px;
+}
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/**
+chird task list
+**/
+ion-col[width-10]{
+    max-width: 32px;
+}
+
+
+/**
+rating
+**/
+ul {
+  padding: 0px;
+  &.rating li {
+    padding: 5px !important;
+    background: none;
+    color: color($colors,rcbg2);
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+
+
+/**
+commentCard
+**/
+#commentCard ion-card-content{
+    background-color: color($colors,light);
+}
+#commentCard ion-item h2{
+    color: color($colors,blackdark)
+}
+#commentCard ion-item p{
+    color: color($colors,primary);
+    font-weight: 500;
+}
+#commentCard ion-card-content p{
+    color: color($colors,label);
+}
+#roundicon {    
+    border-radius: 5%;
+    width: 50px;     
+    height: 50px;     
+    text-align: center;
+    padding-top:6px;
+    background-color: color($colors,textbgc)
+}
+#roundicon[round]{
+    border-radius: 50%;
+    background-color: white;   
+    margin: 0 auto;
+}
+[flex-start] ion-avatar{
+    padding-top:13px;
+}
+
+/**
+九宫格视图样式
+**/
+.nightTableRow{
+
+    ion-col {
+      background: none;
+      flex: 0 0 25%;
+      max-width: auto;
+      text-align: center;
+    }
+    ion-card {
+      margin: 0;
+      background: none;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      box-shadow: none;
+    }
+
+    #roundicon{
+        margin: auto;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+    .TableRow-title {
+        line-height: 2.0em;
+        text-align: center;   
+        font-size: 1.4rem;  
+    }
+    ion-badge[notebadge]{
+        position: relative;
+        right: -60%;
+        top: -77px;
+        margin: 0;
+        overflow: hidden;
+        width: 26px;
+        padding: 3px;
+        border: 3px solid #fff;
+        border-radius: 8px;
+    }
+    ion-label{
+        margin:0px;
+    }
+    ion-item-divider{
+        margin-bottom: 10px;
+    }
+}
+
+
+/**
+仿口袋 tabs 样式
+**/
+.debugtabspage{   
+   a.tab-button .tab-button-text{
+       margin-top:-5px;
+   }
+   a.tab-button ion-icon.tab-button-icon{
+    font-size: 2.4em;    
+    margin-bottom: -5px;
+   } 
+
+  #tab-t0-2 ion-icon{    
+      font-size: 3.5em;    
+  }
+  #tab-t0-2 span{
+      display:none;
+      position: relative;
+      top: -5px;
+  }
+}
+/**
+  个人大图标样式
+**/
+ion-item[text-center]{
+   ion-avatar  button,ion-avatar img{
+      margin:0 auto;
+      min-width: 80px;
+      min-height: 80px;
+      max-width: 80px;
+      max-height: 80px;
+      font-size:30px;
+   }
+   H1,H2,H3{
+     font-size:18px;
+     color:color($colors,facebook);
+     margin-top:15px; 
+   }
+}
+
+
+
+span.st5,span.white,span.wht{ color:#33c;}    
+span.st4,span.red{color:#f34;}
+span.st1,span.grn{color: #080;}        
+span.st2,span.st3{color:#3cf;}
+
+
+
+.myPopover .popover-content {     
+    width: 150px !important;
+}
+/* 加载框修改 */
+.myloading .loading-wrapper {
+  border-radius: 50%;
+  max-width: 50px;
+  max-height: 50px;
+  background: #fafafa;
+  -webkit-box-shadow: 0 0 5px rgba(102, 100, 100, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  padding: 5px 6px 2px 6px;
+}
+

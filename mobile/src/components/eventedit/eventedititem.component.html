@@ -1,0 +1,55 @@
+<ion-item-group>
+  <ion-item>
+    <ion-label stacked color="label">*请输入标题：</ion-label>
+    <ion-textarea rows="4" [(ngModel)]="itemEdit.Item.shortdesc"></ion-textarea>
+  </ion-item>
+</ion-item-group>
+<ion-item-group>
+  <ion-item>
+    <ion-label color="label">*工作群组：</ion-label>
+    <ion-select [(ngModel)]="itemEdit.Item.project" okText="选择" cancelText="取消">
+      <ion-option [value]="aitem.Value" *ngFor="let aitem of itemEdit.DropDown.Projects">{{aitem.Text}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-item-group>
+<ion-item-group>
+  <ion-item>
+    <ion-label color="label">机构：</ion-label>
+    <ion-select [(ngModel)]="itemEdit.Item.org" okText="选择" cancelText="取消">
+      <ion-option [value]="aitem.Value" *ngFor="let aitem of itemEdit.DropDown.Organizatoins">{{aitem.Text}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-item-group>
+<ion-item-group>
+  <ion-item (click)="ShowDepartModal()">
+    <ion-label inset color="label">*责任人：</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">
+      <span class='ion-note'>{{DropDownTexts.AssignToName||'[无]'}}</span>
+      <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+    </ion-note>
+  </ion-item>
+</ion-item-group>
+<ion-item-group>
+  <ion-item>
+    <ion-label color="label">重要性：</ion-label>
+    <ion-select [(ngModel)]="itemEdit.Item.category" okText="选择" cancelText="取消">
+      <ion-option [value]="aitem.Value" *ngFor="let aitem of itemEdit.DropDown.Categorys">{{aitem.Text}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-item-group>
+<ion-item-group>
+  <ion-item>
+    <ion-label color="label">紧急性：</ion-label>
+    <ion-select [(ngModel)]="itemEdit.Item.priority" okText="选择" cancelText="取消">
+      <ion-option [value]="aitem.Value" *ngFor="let aitem of itemEdit.DropDown.Prioritys">{{aitem.Text}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-item-group>
+<ion-item-group margin-bottom>
+  <ion-item>
+    <ion-label color="label">状态：</ion-label>
+    <ion-select [(ngModel)]="itemEdit.Item.status" okText="选择" cancelText="取消">
+      <ion-option [value]="aitem.Value" *ngFor="let aitem of itemEdit.DropDown.Statuss">{{aitem.Text}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-item-group>

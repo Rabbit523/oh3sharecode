@@ -1,0 +1,12 @@
+<ion-grid padding-left *ngFor="let i =index,let atask of ExplanationTask" [class.taskComplate]="ExplanationTaskComplate[i]">
+  <ion-row>
+    <ion-col width-10>
+      <input class="bigCheckBox" type="checkbox" [(ngModel)]="ExplanationTaskComplate[i]" (click)="GridCheckBoxClick(i)" />
+    </ion-col>
+    <ion-col class="ataskItem" (click)="ItemClick(atask.Id,i)">
+      {{atask.Description}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <span class="taskDate">{{atask | GetTaskUserDataFormat}}</span>
+  </ion-row>
+</ion-grid>

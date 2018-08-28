@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title mr50>参数配置</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-card mycard>
+    <ion-card-header>
+      <span>分类设置</span>
+    </ion-card-header>
+    <setupbtnlist (btnclick)="openCategories($event)"></setupbtnlist>
+  </ion-card>
+  <ion-card mycard margin-top>
+    <ion-card-header>
+      <span>标签设置</span>
+    </ion-card-header>
+    <ion-list>
+      <button ion-item (click)="UserList()">
+        <span class="fa-stack">
+          <ion-icon class="fa fa-circle fa-stack-2x" color="primary"></ion-icon>
+          <ion-icon class="fa fa-user-o fa-stack-1x fa-inverse"></ion-icon>
+        </span>
+        个人标签
+        <ion-icon class="fa fa-angle-right" item-end color="label"></ion-icon>
+      </button>
+      <button ion-item (click)="DicList()">
+        <span class="fa-stack">
+          <ion-icon class="fa fa-circle fa-stack-2x" color="primary"></ion-icon>
+          <ion-icon class="fa fa-book fa-stack-1x fa-inverse"></ion-icon>
+        </span>
+        基础标签
+        <ion-icon class="fa fa-angle-right" item-end color="label"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>

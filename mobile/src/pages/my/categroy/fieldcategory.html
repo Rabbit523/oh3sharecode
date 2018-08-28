@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title text-center>{{category.HeadTitle}}</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="okcancelChange(1)">
+                <span class="text">完成</span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-list>
+        <ion-item id="ionInputNoBottonColor">
+            <ion-label stacked><small color="danger" [hidden]="categoryName.valid && validate">*</small>分类描述:</ion-label>
+            <ion-textarea rows="2" [(ngModel)]="_category.Name" type="text" required #categoryName="ngModel"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label>分类类型：</ion-label>
+            <ion-select [(ngModel)]="_category.BindType" okText="选择" cancelText="取消" placeholder="-- 请选择 --" [selectOptions]="bindTypeSelectOptions"
+                (ngModelChange)="bindTypeChange($event)">
+                <ion-option *ngFor="let item of categoryEmun.CategoryEmun" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>分类父节点：</ion-label>
+            <ion-select [(ngModel)]="_category.ParentId" okText="选择" cancelText="取消" placeholder="-- 请选择 --">
+                <ion-option *ngFor="let item of category.fieldCategorys" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item id="ionInputNoBottonColor">
+            <ion-label>排序：</ion-label>
+            <ion-input text-right type="text" [(ngModel)]="_category.SortOrder"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-toggle [(ngModel)]="CategoryDefault"></ion-toggle>
+            <ion-label>默认:</ion-label>
+        </ion-item>        
+    </ion-list>
+</ion-content>

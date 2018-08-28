@@ -1,0 +1,40 @@
+eventlistitemsimpgraph {  
+    .row-custom {
+        padding: 5px 16px;
+    }
+    .badge-custom{position: relative;
+        left: -5px;
+        top: -10px;
+    }
+    .col{
+        padding: 0px;
+    }    
+    img {
+        min-width: 100%;
+        margin: 0px auto 0px auto;
+        border-radius: 0%;
+        background: #f4f4f4;
+        overflow:hidden;
+    }
+    .imgdiv {
+        margin-right: 15px;        
+        max-height: 100px;
+        overflow: hidden;
+        border: 1px dotted #222;
+        // -moz-box-shadow: -1px -1px 2px 1px #888 inset;
+        // box-shadow: -1px -1px 2px 1px #888 inset;
+    }    
+    .h2-custom {
+        margin-top: 0px;
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+    .note {
+        color: color($colors,label);
+        font-size: 1.2rem;
+    }
+    .item.item-block .item-inner {
+        padding-right: 0px;
+        padding-left:0px;
+    }
+}

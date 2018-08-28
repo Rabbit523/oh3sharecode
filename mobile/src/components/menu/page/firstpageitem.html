@@ -1,0 +1,11 @@
+<ion-list>
+    <button  ion-item *ngFor="let item of items[0].items" (click)="itemOpenModel(item.EnumId)">
+        <ion-avatar item-left id=roundicon>
+            <ion-icon id="icon-Big" [name]="item.IconName" [color]="item.P_color"></ion-icon>
+        </ion-avatar>
+        <h2>{{item.H_title}}
+            <span *ngIf="item.calc" class="data">{{item.LastTime | toWeekDay}}</span>
+        </h2>
+        <p class="plabel">{{item.P_title | formatStr:item.Count}}</p>
+    </button >
+</ion-list>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title mr50>我的足迹</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-item itembm *ngFor="let item of state.TractorMark.Items" (click)="goToEventDetail(item.bu_bug)">
+    <h2 text-wrap>
+      <ion-badge float-left class="badge-custom">{{item.bu_bug}}</ion-badge>{{item.bg_short_desc}}</h2>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <pagination [pager]="state.pager" (search)="doSearch($event)"> </pagination>
+</ion-footer>

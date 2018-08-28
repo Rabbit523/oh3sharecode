@@ -1,0 +1,10 @@
+<ion-list>
+    <ion-list-header *ngIf="items.text" no-margin>
+        搜索<span>{{items.text}}</span> 的结果
+    </ion-list-header>
+    <ion-item *ngFor="let item of items.Items" (click)="btnClick(item.Id)">
+        <h2 class="resr" [innerHtml]="item.Description"></h2>
+        <p class="time">{{item.Date}}&nbsp;&nbsp;编号：{{item.Id}}&nbsp;&nbsp;状态：{{item.Status}}</p>
+        <p text-wrap [innerHtml]="item.Text"></p>
+    </ion-item>
+</ion-list>

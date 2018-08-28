@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismiss()" class="backformodal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title mr50>联系人</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-list *ngIf="contactorPerson">
+    <ion-list-header text-center class="contactor">
+      <personpicorname [PersonName]="contactorPerson.us_firstname" [PersonPicurl]="contactorPerson.UserPic" class="item-img"> </personpicorname>
+      <h2 color="facebook">{{contactorPerson.us_firstname}} {{contactorPerson.us_lastname}}</h2>
+      <p>{{contactorPerson.og_name}}</p>
+      <rating [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+        nullable="false" (ngModelChange)="onModelChange($event)">
+      </rating>
+    </ion-list-header>
+    <ion-item>
+      <h2>登录名：{{contactorPerson.us_username}}</h2>
+      <ion-icon name=person item-right color="label"></ion-icon>
+    </ion-item>
+    <ion-item (click)="openCall(contactorPerson.us_email)">
+      <h2>电 话：{{contactorPerson.us_email||"未登记"}}</h2>
+      <ion-icon name=call item-right color="favorite"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

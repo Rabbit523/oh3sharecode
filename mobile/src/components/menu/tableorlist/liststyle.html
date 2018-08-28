@@ -1,0 +1,15 @@
+<ion-list>
+    <ion-item-group *ngFor="let aitem of items">
+        <ion-item-divider text color="light" *ngIf="items.length>1">{{aitem.G_title}} </ion-item-divider>
+        <button  ion-item *ngFor="let item of aitem.items" (click)="itemOpenModel(item.EnumId)">
+            <ion-avatar item-left id=roundicon>
+                <ion-icon id="icon-Big" [name]="item.IconName" [color]="item.P_color"></ion-icon>
+            </ion-avatar>
+            <h2>{{item.H_title}}</h2>
+            <ion-badge item-right margin-right *ngIf="item.Count!='0'" id="badge-custom">{{item.Count}}</ion-badge>
+            <p class="plabel">{{item.P_title}}</p>
+            <ion-icon class="fa fa-angle-right" color="label" item-right>               
+              </ion-icon>
+        </button >
+    </ion-item-group>
+</ion-list>

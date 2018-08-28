@@ -1,0 +1,5 @@
+<ion-card-content *ngFor="let item of PostItems" class="card-content-custom">
+  <div class="content" [innerHTML]="item.ShowText"></div>
+  <imgcard [imageclass]="'postimageclass'" [sourcesrc]="item.ImgAnchor" [thumbsrc]="item.ImgSrc" [title]="" [subtitle]="" *ngIf="item.Imgtype==='image'"></imgcard>
+  <span *ngIf="item.Imgtype==='file'">附件：{{item.ImgAnchor}}</span>
+</ion-card-content>

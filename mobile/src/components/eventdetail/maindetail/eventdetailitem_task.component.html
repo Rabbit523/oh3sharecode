@@ -1,0 +1,12 @@
+<ion-card-content no-padding margin-left>
+  <ion-card-title text-wrap>
+    {{shortdesc.displayValue}}
+  </ion-card-title>
+  <p class="viewdetail">
+    {{AssignToName.label}}：{{AssignToName.displayValue|TrimStr:','}}
+  </p>
+  <p class="viewdetail"> {{BugParticipantsName.label}}：{{BugParticipantsName.displayValue}}
+  </p>
+  <p class="viewdetail" *ngIf="PlannedEndDate.displayValue"> {{PlannedEndDate.label}}：{{PlannedEndDate.displayValue}}
+  </p>
+</ion-card-content>

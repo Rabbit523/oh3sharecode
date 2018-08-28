@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title mr50>{{state.pageTitle}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+    <ion-list>
+        <todocomponent *ngFor="let item of state.Items" [item]="item" (eventclick)="OpenDetailPage($event)"></todocomponent>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">66</ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

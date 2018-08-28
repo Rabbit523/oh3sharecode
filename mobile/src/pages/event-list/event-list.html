@@ -1,0 +1,66 @@
+<ion-menu id="listfiltercontentMenu" [content]="EventListFiltercontent">
+  <ion-header>
+    <ion-toolbar color="navbar">
+      <ion-title>高级菜单</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="outer-content">
+    <ion-list>
+      <ion-item class="chart" (click)="openCharts()">
+        图表查看
+        <ion-icon name="pulse" color="primary"></ion-icon>
+        <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <eventlistmenufiltercontent [filter]="state.Filter" [showview]="showView" (setDropDownValue)="MenuFilter($event)">
+    </eventlistmenufiltercontent>
+  </ion-content>
+</ion-menu>
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title *ngIf="state.Filter.ViewId != 5"> {{state.Filter.pageTitle}}</ion-title>
+    <ion-title *ngIf="state.Filter.ViewId == 5" mr50> {{state.Filter.pageTitle}}</ion-title>
+    <ion-buttons end *ngIf="state.Filter.ViewId != 5">
+      <button ion-button icon-only (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp;
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content" #EventListFiltercontent>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="refresh" pullingText="刷新数据" refreshingSpinner="circles" refreshingText="加载中..."></ion-refresher-content>
+  </ion-refresher>
+  <ion-item (click)="openMycreate()" *ngIf="state.Filter.ViewId == 4" no-lines id="fabu">
+    我发布的
+    <ion-icon class="fa fa-angle-right" item-right color="label"></ion-icon>
+  </ion-item>
+  <ion-item-group>
+    <ion-item-divider text color="light" class="divider-custom" *ngIf="state.Filter.ViewId == 4">我收到的</ion-item-divider>
+    <ng-container *ngIf="state.Filter.ViewId == 0">
+      <eventlistitemsimptext *ngFor="let item of state.myrecords.Items" [item]="item" (eventclick)="goToEventDetail($event)"></eventlistitemsimptext>
+    </ng-container>
+    <ng-container *ngIf="state.Filter.ViewId == 1">
+      <eventlistitemsimpgraph *ngFor="let item of state.myrecords.Items" [item]="item" (eventclick)="goToEventDetail($event)"></eventlistitemsimpgraph>
+    </ng-container>
+    <ng-container *ngIf="state.Filter.ViewId == 2">
+      <eventlistitem *ngFor="let item of state.myrecords.Items" [item]="item" (eventclick)="goToEventDetail($event)">
+      </eventlistitem>
+    </ng-container>
+    <ng-container *ngIf="state.Filter.ViewId == 3">
+      <eventlistitemproblem *ngFor="let item of state.myrecords.Items" [item]="item" (eventclick)="goToEventDetail($event)">
+      </eventlistitemproblem>
+    </ng-container>
+    <ng-container *ngIf="state.Filter.ViewId == 4">
+      <eventlistitemtask *ngFor="let item of state.myrecords.Items" [item]="item" (eventclick)="goToEventDetail($event)">
+      </eventlistitemtask>
+    </ng-container>
+    <ng-container *ngIf="state.Filter.ViewId == 5">
+      <eventlistitemrules *ngFor="let item of state.myrecords.Items" [item]="item" (eventclick)="goToEventDetail($event)">
+      </eventlistitemrules>
+    </ng-container>
+  </ion-item-group>
+</ion-content>
+<ion-footer>
+  <pagination [pager]="state.pager" (search)="doSearch($event)"> </pagination>
+</ion-footer>

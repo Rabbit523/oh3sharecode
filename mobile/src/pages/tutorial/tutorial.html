@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <ion-navbar color="navbar">
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">下一页</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce class="outer-content">
+  <ion-slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image"/>
+      <h2 class="slide-title">
+       1. <b>主动发现</b>:
+      </h2>
+      <p>
+         现场负责人可通过手机客户端，即时拍照和文字描述上报在现场发现的设备缺陷、隐患等问题。
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image"/>
+      <h2 class="slide-title" >2.<b>发现原因</b>:</h2>
+      <p> 不管是段、科室、车间还是工班管理人员，通过手机客户端软件，即时掌控现场问题。</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image"/>
+      <h2 class="slide-title">3. <b>解决问题</b>:</h2>
+      <p> 确保问题处理过程标准化、流程化、规范化。</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>
+      <h2 class="slide-title">进入系统?</h2>
+      <button ion-button icon-right large clear (click)="startApp()">
+        继续
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

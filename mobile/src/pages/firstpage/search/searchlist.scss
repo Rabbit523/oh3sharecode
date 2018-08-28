@@ -1,0 +1,18 @@
+searchlist {
+    .resr{
+        margin-top:2px!important;
+        overflow:hidden; 
+        text-overflow:ellipsis; 
+        white-space:nowrap;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    ion-list-header span {
+        color: color($colors,danger);
+    }
+    .time {
+        font-size:1.3rem;
+        color: color($colors,label);
+        margin: 5px auto;
+    }
+}

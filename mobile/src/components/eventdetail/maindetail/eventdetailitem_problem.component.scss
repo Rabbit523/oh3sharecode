@@ -1,0 +1,11 @@
+eventdetailitemproblem {
+    ion-textarea {     
+        color: color($colors,label);
+    }
+    ion-input {     
+        color: color($colors,label);
+    }
+    .fillIcon .item-inner {
+        border-bottom: 1px #dedede solid !important;
+    }
+}

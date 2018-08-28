@@ -1,0 +1,6 @@
+<ion-item itembm (click)="btnClick(item.bg_id)">
+  <personpicorname item-left [PersonName]="item.us_firstname_reported" [PersonPicurl]="item.us_reported_pic"> </personpicorname>
+  <h3>{{item.ReportedOrganizition}}</h3>
+  <h2 class="ellipsis">{{item.bg_short_desc}}</h2>
+  <p>{{item.TaskList|formatTask}}</p>
+</ion-item>

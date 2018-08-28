@@ -1,0 +1,29 @@
+page-event-createproblem{
+  .text {
+    padding: 0 20px;
+    font-size: 1.6rem;
+    }
+  .item {
+    margin-top: 16px;
+    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+  }
+  .item.item-block .item-inner {
+    border-bottom: 0px solid #dedede;
+  }
+  .toolbar-title {       
+    font-size: 1.8rem;
+  }
+  .mediatoolbox-toolbar {
+    min-height: 40px;
+  }
+  .row-custom {
+    max-height: 3.6rem;
+  }  
+  .button-foot {
+    height: 3.6rem;
+    margin: 0px;
+    color: color($colors,blackdark);
+  }
+}
+ 

@@ -1,0 +1,110 @@
+page-event-detail {
+    /*chat 视图使用*/
+    .message-wrapper {
+      position: relative;
+      background-color: color($colors,light);
+    }
+    .message-wrapper:last-child {
+      margin-bottom: 10px;
+    }    
+    .chat-bubble {
+      border-radius: 5px;
+      display: inline-block;
+      padding: 10px 18px;
+      position: relative;
+      margin: 10px;
+      max-width: 80%;
+    }
+    .chat-bubble[clearWith] {
+      max-width: 100%;
+    }
+    .chat-bubble:before {
+      content: "\00a0";
+      display: block;
+      height: 16px;
+      width: 9px;
+      position: absolute;
+      bottom: 10px;
+    }
+    img.profile-pic,button.profile-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 10px;
+      // top: 10px;
+    }
+    button.profile-btn{
+          font-size: 10px;
+        line-height: 20px;
+    }
+    img.profile-pic.left ,button.profile-btn.left{
+      left: 10px;
+    }
+    img.profile-pic.right,button.profile-btn.right {
+      right: 10px;
+    }
+    .message {
+      font-size: 14px;
+    }
+    .message-user{
+      white-space: nowrap;
+      font-size: 14px;
+    }
+    
+    .chat-bubble.left {
+      background-color: #e6e5eb;
+      float: left;
+      margin-left: 55px;
+    }
+    .chat-bubble.left:before {
+      background-color: #e6e5eb;
+      left: 0px;
+      -webkit-transform: rotate(70deg) skew(5deg);
+    }
+    .chat-bubble.right {
+      background-color: #158ffe;
+      color: white;
+      float: right;
+      margin-right: 55px;
+    }
+    .chat-bubble.right:before {
+      background-color: #158ffe;
+      right: 0px;
+      -webkit-transform: rotate(118deg) skew(-5deg);
+    }       
+    
+    .cf {
+      clear: both !important;
+    }
+     
+    #footerBar, #footerBar ion-icon {     
+      height: 50px;
+    }   
+    .eventdetailcard {
+      border-top:1px #dedede solid;
+    }
+    .toolbarinput{  
+      width: 100%;  
+      border: 0px;  
+      padding: 5px;  
+      margin-left: 10px;
+    }
+    .list-header {
+      font-size: 1.5rem;
+      color: color($colors,dark);
+      font-weight: 700;
+      margin-bottom: 0px;
+    }
+    .label {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    } 
+    ion-list-header {
+      margin-top: 0px;
+    }  
+    .label-custom {margin-top: 0px;}
+    .item ion-icon[item-start] + .item-inner {margin-left: 5px;}
+    .footgrounp8{float:left; width: 80%;}
+    .footgrounp2{float:left; width: 20%;}
+}

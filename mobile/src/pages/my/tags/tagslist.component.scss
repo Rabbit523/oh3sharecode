@@ -1,0 +1,25 @@
+tagslistcomponent {
+    .header-custom {
+        font-size: 1.6rem;
+        color: color($colors,dark);;
+        margin-top:16px;
+        margin-bottom: 0px;
+        border-bottom: 1px solid #dedede;
+    }
+    .header-custom:first-child {
+        margin-top:0px;
+    }
+    .list + ion-list ion-list-header {
+        margin-top: 0px;
+    }
+    h2 {
+        color: color($colors,blackdark);
+        margin-left:16px !important;
+    }
+    .icon-Big {
+        font-size:32px;
+    }
+    .icon-small {
+        font-size:20px;
+    }
+}

@@ -1,0 +1,10 @@
+page-mybookmark-list {    
+    .badge {
+        min-width: 55px;
+    }
+    .item-custom h2 {
+        font-size:1.5rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

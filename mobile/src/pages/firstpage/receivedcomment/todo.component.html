@@ -1,0 +1,7 @@
+<ion-item itembm (click)="btnClick(item.bg_id)">
+    <h2 text-wrap class="h2-custom">
+        <ion-badge class="ionbadge">{{item.bg_id}}</ion-badge>{{item.bg_short_desc}}</h2>
+    <p class="p-custom text-label">
+        {{item.us_firstname_reported|ReplaceComa}} &nbsp;{{item.bg_reported_date}} &nbsp; {{item.st_name}}
+    </p>
+</ion-item>

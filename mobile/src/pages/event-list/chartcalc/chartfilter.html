@@ -1,0 +1,20 @@
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let i=index,let item of CheckBoxDataArray">
+            <ion-label>{{item.value}}</ion-label>
+            <ion-checkbox color="primary" [(ngModel)]="CheckedBox[i]" [disabled]="CheckedBox[i]" (click)="CheckArrayLength($event,item.key)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-row>
+        <ion-col text-center no-padding>
+            <button ion-button icon-left full color="light" (click)="MenuFilter(0)" class="button-foot">
+                <ion-icon name='backspace' class="backspace"></ion-icon>关闭</button>
+        </ion-col>
+        <ion-col text-center no-padding>
+            <button ion-button icon-left full color="primary" (click)="MenuFilter(1)" class="button-foot">
+                <ion-icon name='search'></ion-icon>确定</button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

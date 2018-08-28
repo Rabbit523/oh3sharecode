@@ -1,0 +1,8 @@
+<ion-item itembm (click)="btnClick(item.bg_id)" class="content-custom">
+  <h2 text-wrap class="h2-custom">
+    <ion-badge>{{item.bg_id}}</ion-badge>
+    <span *ngIf="item.SeenSpan" class="badge-custom">{{item.SeenSpan}}</span>{{item.bg_short_desc}}</h2>
+  <ion-note class="note"> 更新人：{{item.us_firstname_last_updated|ReplaceComa}} &nbsp;更新日期：{{item.bg_last_updated_date}}
+    <p text-wrap class="p-custom">内容：{{item.bg_last_updated_content}} </p>
+  </ion-note>
+</ion-item>

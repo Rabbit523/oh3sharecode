@@ -1,0 +1,5 @@
+<ion-list-header *ngIf="BugRelations.length>0">关系列表</ion-list-header>
+<ion-item *ngFor="let item of BugRelations" (click)="btnClick(item.Bug2Id)">
+    <h3>{{item.Bug2Id}} {{item.DirectionName}} {{item.st_name}}</h3>
+    <p>{{item.bg_short_desc}}</p>
+</ion-item>

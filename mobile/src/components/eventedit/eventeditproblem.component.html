@@ -1,0 +1,122 @@
+<ion-item-group>
+  <ion-item>
+    <ion-icon name="person-add" item-left color="primary"></ion-icon>
+    <ion-label>上报人员:{{ItemDetail.reportedByUserStr}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="clock" item-left color="primary"></ion-icon>
+    <ion-label>上报时间:{{ItemDetail.reportedByDateStr}}</ion-label>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item>
+    <ion-label color="dark" stacked>*问题描述:</ion-label>
+    <ion-textarea row="4" [(ngModel)]="ItemDetail.Item.shortdesc"></ion-textarea>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item (click)="ShowResponsibleDepart()">
+    <ion-label color="dark" stacked>*{{bugProblem.fieldProblemResponsibleDepart.Item.custom_LabelName}}:</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">
+      <span class='ion-note'>
+        <span *ngFor="let aitem of bugProblem.fieldProblemResponsibleDepart.pageDisplay">{{aitem}}</span>
+      </span>
+      <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+    </ion-note>
+  </ion-item>
+
+  <ion-item (click)="ShowResponsiblePerson()">
+    <ion-label color="dark" stacked>*{{bugProblem.fieldProblemResponsiblePerson.Item.custom_LabelName}}:</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">
+      <span class='ion-note'>
+        <span *ngFor="let aitem of bugProblem.fieldProblemResponsiblePerson.pageDisplay">{{aitem}}</span>
+      </span>
+      <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+    </ion-note>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item [hidden]="true">
+    <ion-label color="dark">问题库:</ion-label>
+    <ion-select [(ngModel)]="ItemDetail.Item.project" okText="选择" cancelText="取消" placeholder="--请选择--">
+      <ion-option [value]="aitem.Value" *ngFor="let aitem of ItemDetail.DropDown.Projects">{{aitem.Text}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label color="dark">{{bugProblem.fieldProblemFrom.Item.custom_LabelName}}:</ion-label>    
+      <ion-select [(ngModel)]="bugProblem.fieldProblemFrom.Item.cd_value" okText="选择" cancelText="取消" placeholder="--请选择--">
+          <ion-option [value]="aitem.ct_id" *ngFor="let aitem of bugProblem.fieldProblemFrom.Dropdown">{{aitem.ct_name}}</ion-option>
+        </ion-select>
+    </ion-item>
+  <ion-item>
+    <ion-label color="dark">{{bugProblem.fieldProblemLevel.Item.custom_LabelName}}:</ion-label>
+    <ion-select [(ngModel)]="bugProblem.fieldProblemLevel.Item.cd_value" okText="选择" cancelText="取消" placeholder="--请选择--">
+      <ion-option [value]="aitem.ct_id" *ngFor="let aitem of bugProblem.fieldProblemLevel.Dropdown">{{aitem.ct_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark">{{bugProblem.fieldProblemType.Item.custom_LabelName}}:</ion-label>
+    <ion-select [(ngModel)]="bugProblem.fieldProblemType.Item.cd_value" okText="选择" cancelText="取消" placeholder="--请选择--">
+      <ion-option [value]="aitem.ct_id" *ngFor="let aitem of bugProblem.fieldProblemType.Dropdown">{{aitem.ct_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark">{{bugProblem.fieldProblemProcessType.Item.custom_LabelName}}:</ion-label>
+    <ion-select [(ngModel)]="bugProblem.fieldProblemProcessType.Item.cd_value" okText="选择" cancelText="取消" placeholder="--请选择--">
+      <ion-option [value]="aitem.ct_id" *ngFor="let aitem of bugProblem.fieldProblemProcessType.Dropdown">{{aitem.ct_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item>
+    <ion-label color="dark" stacked>{{bugProblem.fieldProblemChange.custom_LabelName}}:</ion-label>
+    <ion-textarea rows="4" [(ngModel)]="ChangeTxt"></ion-textarea>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item>
+    <ion-label color="dark">整改时限:</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">      
+        <ion-datetime placeholder="无" doneText="选择" cancelText="放弃" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="YYYY-MM-DD HH:mm" min="2015" max="2020"
+          [(ngModel)]="PlanDate" (ionChange)="SetDateEndDate()"></ion-datetime>      
+    </ion-note>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item (click)="ShowCoordinateDepart()">
+    <ion-label color="dark">{{bugProblem.fieldProblemCoordinateDepart.Item.custom_LabelName}}:</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">
+      <span *ngFor="let aitem of bugProblem.fieldProblemCoordinateDepart.pageDisplay">{{aitem}}</span>
+      <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+    </ion-note>
+  </ion-item>
+
+  <ion-item (click)="ShowSuperviseDepart()" [hidden]="true">
+    <ion-label color="dark">{{bugProblem.fieldProblemSuperviseDepart.Item.custom_LabelName}}:</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">
+      <span class='ion-note'>
+        <span *ngFor="let aitem of bugProblem.fieldProblemSuperviseDepart.pageDisplay">{{aitem}}</span>
+      </span>
+      <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+    </ion-note>
+  </ion-item>
+
+  <ion-item (click)="ShowMajorPerson()" [hidden]="true">
+    <ion-label color="dark">{{bugProblem.fieldProblemMajorPerson.Item.custom_LabelName}}:</ion-label>
+    <ion-note item-right color="label" style="margin-right: 5px;">
+      <span class='ion-note'>
+        <span *ngFor="let aitem of bugProblem.fieldProblemMajorPerson.pageDisplay">{{aitem}}</span>
+      </span>
+      <ion-icon item-right name="md-arrow-dropdown" style="margin:0px;"></ion-icon>
+    </ion-note>
+  </ion-item>
+</ion-item-group>

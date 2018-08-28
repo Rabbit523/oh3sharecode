@@ -1,0 +1,33 @@
+<ion-card mycard itembm>
+  <creatorpiccomponent [CreateDate]="item.bg_reported_date" [ThumbPicurl]="item.ThumbImgStr" [UserItem]="itemBgReportedUser"></creatorpiccomponent>
+  <ion-card-content nopadtop (click)="btnClick(item.bg_id)">
+    <h2 text-wrap class="h2-custom">
+      <ion-badge>{{item.bg_id}}</ion-badge>
+      <span *ngIf="item.SeenSpan" class="badge-custom">{{item.SeenSpan}}</span>{{item.bg_short_desc}}</h2>
+    <ion-note id="anote">
+      更新人：{{item.us_firstname_last_updated|ReplaceComa}} &nbsp;更新日期：{{item.bg_last_updated_date}}
+      <p class="note">内容：{{item.bg_last_updated_content}} </p>
+    </ion-note>
+  </ion-card-content>
+  <ion-row class="row-custom">
+    <ion-col>
+      <span [class]="item.CreateTimeColor">创建</span>
+    </ion-col>
+    <ion-col>
+      <span [class]="item.bgcolor">标记</span>
+    </ion-col>
+    <ion-col>
+      <span *ngIf="item.st_color.indexOf('#')==-1" [class]="item.st_color">状态</span>    
+      <span *ngIf="item.st_color.indexOf('#')>-1" [style.color]="item.st_color">状态</span>
+    </ion-col>
+    <ion-col>
+      <span [style.color]="item.pr_background_color">紧急</span>
+    </ion-col>
+    <ion-col>
+      <span>
+        <ion-icon name="heart" *ngIf="item.bu_note" color="rcbg1"></ion-icon>
+        <ion-icon name="heart-outline" *ngIf="!item.bu_note"></ion-icon>
+      </span>
+    </ion-col>
+  </ion-row>
+</ion-card>
